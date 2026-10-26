@@ -221,6 +221,9 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
 .pol-body tr:last-child td{border-bottom:none}
 .pol-body code{font-size:11.5px;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
 .pol-body th{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.pol-body.pol-en{display:none}
+html[lang=en] .pol-body.pol-en{display:block}
+html[lang=en] .pol-body.pol-it{display:none}
 .pol-body .en-note{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
 .risk-line{margin-top:14px;max-width:760px;font-size:12px;color:var(--muted);line-height:1.6;font-weight:300}
 .risk-line strong{color:var(--muted-strong);font-weight:500}
@@ -603,7 +606,7 @@ body.modal-open{overflow:hidden}
       <p data-i18n="foot.d3">Le operazioni sui portafogli di crediti comportano rischi significativi, inclusa la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. Per residenti fuori dall'Italia l'accesso al dossier è subordinato a verifica della normativa locale; l'accesso non è consentito a soggetti residenti in giurisdizioni in cui la diffusione di queste informazioni non sia conforme alla normativa locale. Titolare del trattamento dei dati personali: IASON S.p.A.</p>
     </div>
     <div class="foot-bottom">
-      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v5.8 · Ottobre 2026</div>
+      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v5.9 · Ottobre 2026</div>
       <div class="foot-links">
         <a href="#privacy" onclick="openPolicy('privacy');return false">Privacy</a>
         <a href="#cookie-policy" onclick="openPolicy('cookie');return false">Cookie</a>
@@ -615,8 +618,8 @@ body.modal-open{overflow:hidden}
 
 <!-- PRIVACY POLICY -->
 <dialog class="policy" id="privacy">
-  <div class="pol-head"><h3>Informativa sul trattamento dei dati personali</h3><button type="button" onclick="closePolicy('privacy')" aria-label="Chiudi">×</button></div>
-  <div class="pol-body">
+  <div class="pol-head"><h3 data-i18n="pol.privacy.h">Informativa sul trattamento dei dati personali</h3><button type="button" onclick="closePolicy('privacy')" aria-label="Chiudi">×</button></div>
+  <div class="pol-body pol-it">
     <p>Resa ai sensi dell'art. 13 del Regolamento (UE) 2016/679 ("GDPR") e del D.Lgs. 196/2003. Versione 5.0 · Ottobre 2026.</p>
     <h4>1. Titolare del trattamento</h4>
     <p><strong>IASON S.p.A.</strong>, sede legale in Viale Luigi Schiavonetti 278, 00173 Roma (RM), C.F./P.IVA 18617101003, REA RM-1795823. Email: <a href="mailto:info@iason.com" style="color:var(--gold)">info@iason.com</a> · PEC: iasonsrl@legalmail.it. Il Titolare non ha nominato un Responsabile della protezione dei dati, non ricorrendone i presupposti ex art. 37 GDPR.</p>
@@ -650,19 +653,54 @@ body.modal-open{overflow:hidden}
     <p>Accesso, rettifica, cancellazione, limitazione, portabilità, opposizione e revoca del consenso (artt. 15-22 GDPR), scrivendo ai recapiti del Titolare. È possibile proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).</p>
     <h4>7. Aggiornamenti</h4>
     <p>La presente informativa può essere aggiornata; la versione vigente è sempre pubblicata su questa pagina con indicazione della data.</p>
-    <p class="en-note">English: this notice is provided in Italian, which prevails. An English courtesy translation is available on request at info@iason.com.</p>
+      </div>
+  <div class="pol-body pol-en">
+    <p>Provided pursuant to Art. 13 of Regulation (EU) 2016/679 ("GDPR") and Legislative Decree 196/2003. Version 5.0 · October 2026.</p>
+    <h4>1. Data controller</h4>
+    <p><strong>IASON S.p.A.</strong>, registered office at Viale Luigi Schiavonetti 278, 00173 Rome (RM), Italy, tax code / VAT no. 18617101003, REA RM-1795823. Email: <a href="mailto:info@iason.com" style="color:var(--gold)">info@iason.com</a> · Certified email (PEC): iasonsrl@legalmail.it. The Controller has not appointed a Data Protection Officer, as the conditions under Art. 37 GDPR are not met.</p>
+    <h4>2. Data processed</h4>
+    <p>Identification and contact data entered in the form (first name, last name, role, company, email, optional phone number, investor type, country of residence, interests expressed), the declaration concerning professional-investor status, and the preferences and consents given, with date, time, language and text version. The site does not collect special categories of data (Art. 9 GDPR).</p>
+    <h4>3. Purposes and legal bases</h4>
+    <div class="tw"><table>
+      <tr><th>Purpose</th><th>Legal basis</th><th>Provision of data</th></tr>
+      <tr><td>Handling the request and arranging the call with our staff</td><td>Art. 6(1)(b) GDPR – pre-contractual steps taken at the data subject's request</td><td>Necessary: without it the request cannot be processed</td></tr>
+      <tr><td>Verifying professional-investor status and keeping evidence of it</td><td>Art. 6(1)(c) (legal obligations on communications reserved for professional investors) and 6(1)(f) (legitimate interest in documenting compliance with regulatory exemptions)</td><td>Necessary</td></tr>
+      <tr><td>Follow-up contact by email and phone to schedule the call and continue the conversation, including on future transactions</td><td>Art. 6(1)(a) – consent, which may be withdrawn at any time</td><td>Necessary to schedule the call; withdrawal stops further contact</td></tr>
+      <tr><td>Verifying compatibility with local law for residents outside Italy</td><td>Art. 6(1)(c) and 6(1)(f)</td><td>Necessary for residents abroad</td></tr>
+      <tr><td>Establishing, exercising or defending legal claims and complying with legal obligations (including any anti-money-laundering obligations in the event of a subsequent transaction)</td><td>Art. 6(1)(c) and 6(1)(f)</td><td>—</td></tr>
+    </table></div>
+    <p>No profiling or automated decision-making is carried out (Art. 22 GDPR).</p>
+    <h4>4. Recipients and processors</h4>
+    <ul>
+      <li><strong>Form email delivery service</strong>: EmailJS Inc. (USA) – processor; transfer outside the EU based on the EU-U.S. Data Privacy Framework or standard contractual clauses (Art. 46 GDPR). [To be replaced with the actual provider if an in-house backend is adopted.]</li>
+      <li><strong>Website hosting</strong>: Vercel Inc. (USA) – processor; safeguards under Art. 46 GDPR.</li>
+      <li><strong>Call scheduling tool</strong>: [SCHEDULING PROVIDER, e.g. Calendly LLC / Cal.com] – processor; processing takes place only if the data subject uses the booking link.</li>
+      <li>Authorised staff of the Controller; legal and professional advisers bound by confidentiality; competent authorities where required by law.</li>
+    </ul>
+    <p>Data is neither disseminated nor sold to third parties for commercial purposes. The updated list of processors is available on request.</p>
+    <h4>5. Retention</h4>
+    <ul>
+      <li>Request data: 24 months from the last meaningful contact.</li>
+      <li>Follow-up contact data (consent-based): until withdrawal and in any case no longer than 24 months from the last contact.</li>
+      <li>Evidence of the professional-investor declaration and verification: 10 years from any transaction or, failing that, 5 years from collection, for legal defence and regulatory documentation purposes.</li>
+    </ul>
+    <h4>6. Data subject rights</h4>
+    <p>Access, rectification, erasure, restriction, portability, objection and withdrawal of consent (Arts. 15-22 GDPR), by writing to the Controller's contact details above. A complaint may be lodged with the Italian Data Protection Authority (Garante per la protezione dei dati personali, www.garanteprivacy.it).</p>
+    <h4>7. Updates</h4>
+    <p>This notice may be updated; the current version is always published on this page with its date.</p>
+    <p class="en-note">This is a courtesy translation. In the event of any discrepancy, the Italian version prevails.</p>
   </div>
 </dialog>
 
 <!-- COOKIE POLICY -->
 <dialog class="policy" id="cookie-policy">
-  <div class="pol-head"><h3>Cookie Policy</h3><button type="button" onclick="closePolicy('cookie')" aria-label="Chiudi">×</button></div>
-  <div class="pol-body">
+  <div class="pol-head"><h3 data-i18n="pol.cookie.h">Cookie Policy</h3><button type="button" onclick="closePolicy('cookie')" aria-label="Chiudi">×</button></div>
+  <div class="pol-body pol-it">
     <p>Informativa resa ai sensi dell'art. 122 del D.Lgs. 196/2003 e delle Linee guida del Garante del 10 giugno 2021. Titolare: IASON S.p.A. (recapiti nell'Informativa privacy). Versione 5.0 · Ottobre 2026.</p>
     <h4>Cosa usiamo</h4>
     <div class="tw"><table>
       <tr><th>Categoria</th><th>Strumento</th><th>Finalità</th><th>Durata</th><th>Consenso</th></tr>
-      <tr><td>Tecnici</td><td>localStorage <code>ia_lang</code>, <code>ia_cookie_consent</code>, <code>ia_cookie_consent_at</code></td><td>Memorizzare la lingua scelta e le preferenze cookie espresse</td><td>Fino a cancellazione da parte dell'utente</td><td>Non richiesto</td></tr>
+      <tr><td>Tecnici</td><td>localStorage <code>ia_lang</code>, <code>ia_cookie_consent</code>, <code>ia_cookie_consent_at</code>, <code>ia_gate</code></td><td>Memorizzare la lingua scelta, le preferenze cookie e la dichiarazione di accesso come investitore professionale</td><td>Fino a cancellazione da parte dell'utente</td><td>Non richiesto</td></tr>
       <tr><td>Misurazione</td><td>[STRUMENTO ANALYTICS, es. Plausible / GA4 con IP anonimizzato]</td><td>Statistiche aggregate di utilizzo della pagina</td><td>[durata cookie dello strumento]</td><td>Richiesto</td></tr>
       <tr><td>Marketing</td><td>LinkedIn Insight Tag (LinkedIn Ireland Unlimited Company) – cookie <code>li_sugr</code> (90 gg), <code>UserMatchHistory</code> (30 gg), <code>AnalyticsSyncHistory</code> (30 gg), <code>bcookie</code> (1 anno), <code>lidc</code> (1 giorno)</td><td>Misurazione delle conversioni delle campagne LinkedIn</td><td>Come indicato</td><td>Richiesto</td></tr>
     </table></div>
@@ -671,14 +709,29 @@ body.modal-open{overflow:hidden}
     <p>Puoi accettare, rifiutare o personalizzare le categorie dal banner alla prima visita e, in qualsiasi momento, dal link "Preferenze cookie" nel piè di pagina o dall'icona in basso a sinistra. Chiudere il banner con la "X" equivale a mantenere le impostazioni predefinite (solo cookie tecnici). Puoi inoltre cancellare i cookie dalle impostazioni del browser.</p>
     <h4>Terze parti</h4>
     <p>LinkedIn: <a href="https://www.linkedin.com/legal/cookie-policy" target="_blank" rel="noopener" style="color:var(--gold)">linkedin.com/legal/cookie-policy</a>. I dati raccolti da LinkedIn possono essere trasferiti negli Stati Uniti sulla base delle garanzie previste dall'art. 46 GDPR.</p>
-    <p class="en-note">English: this notice is provided in Italian, which prevails. An English courtesy translation is available on request.</p>
+      </div>
+  <div class="pol-body pol-en">
+    <p>Notice provided pursuant to Art. 122 of Legislative Decree 196/2003 and the Italian Data Protection Authority's Guidelines of 10 June 2021. Controller: IASON S.p.A. (contact details in the Privacy Notice). Version 5.0 · October 2026.</p>
+    <h4>What we use</h4>
+    <div class="tw"><table>
+      <tr><th>Category</th><th>Tool</th><th>Purpose</th><th>Duration</th><th>Consent</th></tr>
+      <tr><td>Technical</td><td>localStorage <code>ia_lang</code>, <code>ia_cookie_consent</code>, <code>ia_cookie_consent_at</code>, <code>ia_gate</code></td><td>Storing the chosen language, cookie preferences and the professional-investor access declaration</td><td>Until deleted by the user</td><td>Not required</td></tr>
+      <tr><td>Analytics</td><td>[ANALYTICS TOOL, e.g. Plausible / GA4 with IP anonymisation]</td><td>Aggregate page usage statistics</td><td>[tool's cookie duration]</td><td>Required</td></tr>
+      <tr><td>Marketing</td><td>LinkedIn Insight Tag (LinkedIn Ireland Unlimited Company) – cookies <code>li_sugr</code> (90 days), <code>UserMatchHistory</code> (30 days), <code>AnalyticsSyncHistory</code> (30 days), <code>bcookie</code> (1 year), <code>lidc</code> (1 day)</td><td>Measuring conversions of LinkedIn campaigns</td><td>As indicated</td><td>Required</td></tr>
+    </table></div>
+    <p>Analytics and marketing cookies are <strong>not set</strong> until consent is given through the banner. The site's font and libraries are served from our own servers and involve no communication with third parties; the email delivery service is contacted only when the form is submitted.</p>
+    <h4>Managing your preferences</h4>
+    <p>You can accept, reject or customise categories from the banner on your first visit and, at any time, from the "Cookie preferences" link in the footer or the icon at the bottom left. Closing the banner with the "X" keeps the default settings (technical cookies only). You can also delete cookies from your browser settings.</p>
+    <h4>Third parties</h4>
+    <p>LinkedIn: <a href="https://www.linkedin.com/legal/cookie-policy" target="_blank" rel="noopener" style="color:var(--gold)">linkedin.com/legal/cookie-policy</a>. Data collected by LinkedIn may be transferred to the United States under the safeguards provided for in Art. 46 GDPR.</p>
+    <p class="en-note">This is a courtesy translation. In the event of any discrepancy, the Italian version prevails.</p>
   </div>
 </dialog>
 
 <!-- TERMINI DI UTILIZZO -->
 <dialog class="policy" id="terms">
-  <div class="pol-head"><h3>Termini di utilizzo del sito</h3><button type="button" onclick="closePolicy('terms')" aria-label="Chiudi">×</button></div>
-  <div class="pol-body">
+  <div class="pol-head"><h3 data-i18n="pol.terms.h">Termini di utilizzo del sito</h3><button type="button" onclick="closePolicy('terms')" aria-label="Chiudi">×</button></div>
+  <div class="pol-body pol-it">
     <p>Versione 5.0 · Ottobre 2026. L'accesso e l'uso di questa pagina ("Sito"), pubblicata da <strong>IASON S.p.A.</strong> (Viale Luigi Schiavonetti 278, 00173 Roma, C.F./P.IVA 18617101003), sono soggetti ai presenti termini. Se non li accetti, ti invitiamo a non utilizzare il Sito.</p>
     <h4>1. Destinatari</h4>
     <p>Il Sito è rivolto esclusivamente a <strong>investitori professionali</strong> ai sensi dell'Allegato II della Direttiva 2014/65/UE (MiFID II) e della normativa italiana applicabile. Accedendo, l'utente dichiara di rientrare in tale categoria e accetta che IASON S.p.A. verifichi la qualifica prima di qualsiasi accesso a documentazione riservata. Per residenti fuori dall'Italia, l'accesso a qualsiasi documentazione è subordinato alla verifica della compatibilità con la normativa locale.</p>
@@ -700,7 +753,30 @@ body.modal-open{overflow:hidden}
     <p>I presenti termini sono regolati dalla legge italiana. Per ogni controversia è competente in via esclusiva il Foro di Roma, fatta salva la competenza inderogabile prevista dalla legge.</p>
     <h4>10. Modifiche</h4>
     <p>IASON S.p.A. può modificare i presenti termini in qualsiasi momento; la versione vigente è pubblicata sul Sito con indicazione della data.</p>
-    <p class="en-note">English: these terms are provided in Italian, which prevails. An English courtesy translation is available on request at info@iason.com.</p>
+      </div>
+  <div class="pol-body pol-en">
+    <p>Version 5.0 · October 2026. Access to and use of this page (the "Site"), published by <strong>IASON S.p.A.</strong> (Viale Luigi Schiavonetti 278, 00173 Rome, Italy, tax code / VAT no. 18617101003), are subject to these terms. If you do not accept them, please do not use the Site.</p>
+    <h4>1. Intended audience</h4>
+    <p>The Site is addressed exclusively to <strong>professional investors</strong> under Annex II of Directive 2014/65/EU (MiFID II) and applicable Italian law. By accessing, the user declares that they fall within this category and accepts that IASON S.p.A. will verify their status before any access to reserved documentation. For residents outside Italy, access to any documentation is subject to verification of compatibility with local law.</p>
+    <h4>2. Nature of the information</h4>
+    <p>The contents of the Site are for information purposes only and describe in general terms the activity of IASON S.p.A. Nothing on the Site constitutes a public offer, solicitation to invest, deposit-taking, contractual proposal, recommendation or investment, legal or tax advice. IASON S.p.A. is not a financial intermediary and does not provide investment services.</p>
+    <h4>3. Expressions of interest</h4>
+    <p>Submitting the form constitutes a non-binding expression of interest for both parties. It entails no obligation to subscribe and no right of access to reserved documentation. Any subsequent relationship is governed exclusively by dedicated contractual documentation, signed outside the Site, after eligibility checks and the signing of a non-disclosure agreement.</p>
+    <h4>4. Risks</h4>
+    <p>Transactions in credit portfolios carry significant risks, including illiquidity, recoveries lower or slower than expected, regulatory and tax risk and the possible total loss of the capital employed. Past results do not predict future ones. The user must independently assess, including with the assistance of their own advisers, any information received.</p>
+    <h4>5. Confidentiality</h4>
+    <p>Any information received from IASON S.p.A. after registration is confidential and may not be disclosed, reproduced or used for purposes other than assessing a relationship with IASON S.p.A., except as provided in the non-disclosure agreement signed.</p>
+    <h4>6. Intellectual property</h4>
+    <p>Texts, graphics, the "IASON" mark and all other content of the Site are owned by IASON S.p.A. or their respective owners. Reproduction, in whole or in part, without written authorisation is prohibited.</p>
+    <h4>7. Limitation of liability</h4>
+    <p>IASON S.p.A. endeavours to keep the Site's contents up to date but does not guarantee their completeness, accuracy or currency and is not liable for decisions taken on the basis of such contents. The Site may contain links to third-party websites, for whose content IASON S.p.A. is not responsible.</p>
+    <h4>8. Personal data and cookies</h4>
+    <p>The processing of personal data is governed by the <a href="#privacy" onclick="closePolicy('terms');openPolicy('privacy');return false" style="color:var(--gold)">Privacy Notice</a> and the <a href="#cookie-policy" onclick="closePolicy('terms');openPolicy('cookie');return false" style="color:var(--gold)">Cookie Policy</a>.</p>
+    <h4>9. Governing law and jurisdiction</h4>
+    <p>These terms are governed by Italian law. The Court of Rome has exclusive jurisdiction over any dispute, without prejudice to any mandatory jurisdiction provided by law.</p>
+    <h4>10. Amendments</h4>
+    <p>IASON S.p.A. may amend these terms at any time; the current version is published on the Site with its date.</p>
+    <p class="en-note">This is a courtesy translation. In the event of any discrepancy, the Italian version prevails.</p>
   </div>
 </dialog>
 
@@ -817,9 +893,9 @@ en:{
   'foot.d2':'Nothing on this page constitutes a public offer, solicitation to invest, deposit-taking, recommendation or investment, legal or tax advice. No contractual proposal is made through this page. Any co-investment takes place through the subscription of <strong>notes issued by the securitisation vehicle under Law 130/99</strong>, with a <strong>minimum denomination of € 100,000</strong>, reserved for qualified investors under Art. 2(1)(e) of Regulation (EU) 2017/1129 and Art. 100 of the Italian Consolidated Finance Act, on a bilateral basis, with dedicated documentation and after eligibility checks.',
   'foot.d4':'Servicing of non-performing loans is entrusted to an external partner, a servicer registered under Art. 114.6 of Legislative Decree 385/1993. Portfolios are purchased by a securitisation vehicle established under Law 130/1999, which is the sellers\' counterparty. IASON S.p.A. invests its own capital in the vehicle, handles selection, pricing and recovery coordination, has applied for the licence pursuant to Art. 115 R.D. 773/1931 (procedure pending), and is not a financial intermediary under Art. 106 of Legislative Decree 385/1993 nor does it grant loans.',
   'foot.d3':'Transactions in credit portfolios carry significant risks, including the possible total loss of the capital employed. Past results do not predict future ones. For residents outside Italy, access to the dossier is subject to verification of local law; access is not permitted where the distribution of this information would not comply with local law. Data controller: IASON S.p.A.',
-  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v5.8 · October 2026',
+  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v5.9 · October 2026',
   'g.k':'Restricted access','g.h':'This page is reserved for <em>professional investors.</em>','g.p':'The contents describe in general terms the activity of IASON S.p.A. and are addressed exclusively to professional investors under Annex II of Directive 2014/65/EU (MiFID II). They do not constitute a public offer nor a solicitation to invest. Transactions carry significant risks, including the possible loss of capital.','g.yes':'I am a professional investor · Enter','g.no':'I am not a professional investor','g.n':'By continuing you declare that you fall within the category indicated and accept the <a href="#terms" onclick="openPolicy(\'terms\');return false">Terms of use</a>. Your status will in any case be verified before access to any documentation.','g.exit':'Thank you. The contents of this page are not available to the public. For general information on IASON S.p.A. write to <a href="mailto:info@iason.com">info@iason.com</a>.',
-  'ck.h':'Cookies and privacy','ck.sub':'No forced acceptance','ck.p':'We use <strong>technical cookies</strong>, always active and necessary for the site to work. <strong>Analytics</strong> and <strong>marketing</strong> cookies are only set with your consent. Data controller: <strong>IASON S.p.A.</strong>',
+  'pol.privacy.h':'Privacy Notice','pol.cookie.h':'Cookie Policy','pol.terms.h':'Terms of use','ck.h':'Cookies and privacy','ck.sub':'No forced acceptance','ck.p':'We use <strong>technical cookies</strong>, always active and necessary for the site to work. <strong>Analytics</strong> and <strong>marketing</strong> cookies are only set with your consent. Data controller: <strong>IASON S.p.A.</strong>',
   'ck.tech':'Technical<small>Always active: required for the site to work</small>','ck.ana':'Analytics<small>Aggregate usage statistics</small>','ck.mkt':'Marketing<small>LinkedIn Insight Tag – campaign measurement</small>',
   'ck.reject':'Reject all','ck.custom':'Customise','ck.save':'Save preferences','ck.accept':'Accept all',
   'err.send':'An error occurred while sending. Please try again or write to info@iason.com.','err.consent':'To proceed you must declare your professional-investor status and consent to being contacted.','err.company':'For family offices and institutional investors, please indicate company and role.','sending':'Sending...'
@@ -857,7 +933,7 @@ function onCountry(v){ document.getElementById('jurisNote').classList.toggle('vi
 
 // Policy dialogs
 const DLG={privacy:'privacy',cookie:'cookie-policy',terms:'terms'};
-function openPolicy(w){ const d=document.getElementById(DLG[w]); if(!d) return; if(!d.open){ d.showModal(); document.body.classList.add('modal-open'); d.querySelector('.pol-body').scrollTop=0; } }
+function openPolicy(w){ const d=document.getElementById(DLG[w]); if(!d) return; if(!d.open){ d.showModal(); document.body.classList.add('modal-open'); d.querySelectorAll('.pol-body').forEach(b=>b.scrollTop=0); } }
 function closePolicy(w){ const d=document.getElementById(DLG[w]); if(d&&d.open) d.close(); if(!document.querySelector('dialog.policy[open]')) document.body.classList.remove('modal-open'); }
 document.querySelectorAll('dialog.policy').forEach(d=>{
   d.addEventListener('close',()=>{ if(!document.querySelector('dialog.policy[open]')) document.body.classList.remove('modal-open'); });
