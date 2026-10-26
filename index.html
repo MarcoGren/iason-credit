@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title data-i18n="meta.title">IASON S.p.A. · Portafogli di crediti: acquisto, gestione, recupero</title>
-<meta name="description" content="IASON S.p.A. acquista portafogli di crediti con capitale proprio e ne gestisce il recupero con licenza art. 115 TULPS. Comunicazione rivolta a investitori professionali.">
+<title data-i18n="meta.title">Co-investimento in portafogli di crediti · IASON S.p.A.</title>
+<meta name="description" content="IASON S.p.A. acquista portafogli di crediti in proprio e apre il dossier a pochi co-investitori professionali. Comunicazione riservata a investitori professionali.">
 <!-- Comunicazione riservata a investitori professionali: non indicizzata. -->
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#001233">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="IASON">
-<meta property="og:title" content="IASON S.p.A. · Portafogli di crediti">
+<meta property="og:title" content="Co-investimento in portafogli di crediti · IASON S.p.A.">
 <meta property="og:description" content="Comunicazione riservata a investitori professionali. Non costituisce offerta al pubblico.">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary">
@@ -201,22 +201,41 @@ footer{background:var(--navy-deep);border-top:1px solid var(--line);padding:56px
 .foot-legal p strong{color:var(--muted-strong);font-weight:500}
 .foot-bottom{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
 .foot-links{display:flex;gap:20px;flex-wrap:wrap}
-dialog.policy{border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--navy-card);color:var(--white);max-width:820px;width:calc(100% - 32px);padding:0;max-height:88vh}
+dialog.policy{border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--navy-card);color:var(--white);max-width:820px;width:min(820px,calc(100% - 32px));padding:0;max-height:min(88vh,88dvh);overflow:hidden;display:none;flex-direction:column;margin:auto}
+dialog.policy[open]{display:flex}
+body.modal-open{overflow:hidden}
 dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
-.pol-head{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--navy-card)}
-.pol-head h3{font-size:18px;font-weight:600}
-.pol-head button{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;font-size:18px;line-height:1}
-.pol-body{padding:22px 26px 30px;font-size:13.5px;line-height:1.7;color:var(--muted-strong);font-weight:300}
+.pol-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 24px;border-bottom:1px solid var(--line);background:var(--navy-card);flex-shrink:0}
+.pol-head h3{font-size:17px;font-weight:600;line-height:1.3}
+.pol-head button{width:34px;height:34px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
+.pol-body{padding:22px 24px 30px;font-size:13.5px;line-height:1.7;color:var(--muted-strong);font-weight:300;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .pol-body h4{color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin:22px 0 8px;font-weight:700}
 .pol-body h4:first-child{margin-top:0}
 .pol-body p{margin-bottom:10px}
 .pol-body ul{margin:0 0 10px 18px}
 .pol-body li{margin-bottom:5px}
 .pol-body strong{color:var(--white);font-weight:500}
-.pol-body table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0 14px}
+.pol-body .tw{overflow-x:auto;margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--r-sm)}
+.pol-body table{width:100%;min-width:560px;border-collapse:collapse;font-size:12.5px}
 .pol-body th,.pol-body td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.pol-body tr:last-child td{border-bottom:none}
+.pol-body code{font-size:11.5px;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
 .pol-body th{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 .pol-body .en-note{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
+.risk{margin:26px 0 8px;padding:22px 24px;border-left:3px solid var(--gold);background:var(--navy-card);border-radius:0 var(--r-md) var(--r-md) 0;max-width:860px}
+.risk .eyebrow{margin-bottom:10px}
+.risk p{font-size:14.5px;color:var(--muted-strong);line-height:1.7;font-weight:300;margin-bottom:8px}
+.risk p:last-child{margin-bottom:0}
+.risk strong{color:var(--white);font-weight:600}
+.target{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+@media(max-width:760px){.target{grid-template-columns:1fr;gap:12px}}
+.tg{border:1px solid var(--line);border-radius:var(--r-md);padding:26px 24px;background:var(--navy-card)}
+.tg h4{font-size:19px;font-weight:600;margin-bottom:8px}
+.tg p{font-size:14px;color:var(--muted-strong);line-height:1.6;font-weight:300}
+.juris{grid-column:1/-1;display:none;padding:12px 14px;border:1px solid var(--gold);border-radius:var(--r-sm);font-size:12.5px;color:var(--muted-strong);line-height:1.55;background:rgba(216,176,87,.07)}
+.juris.visible{display:block}
+.form-note{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:14px}
+.hero-note strong{color:var(--muted-strong);font-weight:500}
 .cookie{position:fixed;bottom:24px;left:24px;z-index:8000;max-width:460px;width:calc(100% - 48px);background:var(--navy-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px 20px;transform:translateY(180%);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .cookie.visible{transform:none;opacity:1}
 .cookie-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
@@ -292,23 +311,26 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
   footer{padding:40px 0 24px}
   .foot-brand .logo{font-size:36px}
   .foot-bottom{flex-direction:column;gap:10px}
-  dialog.policy{width:100%;max-width:100%;max-height:100vh;border-radius:0;border-left:0;border-right:0}
-  .pol-body{padding:18px 18px 28px;font-size:13px}
-  .pol-body table{display:block;overflow-x:auto;white-space:nowrap}
+  dialog.policy{border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--navy-card);color:var(--white);max-width:820px;width:min(820px,calc(100% - 32px));padding:0;max-height:min(88vh,88dvh);overflow:hidden;display:none;flex-direction:column;margin:auto}
+dialog.policy[open]{display:flex}
+body.modal-open{overflow:hidden}
+  .pol-body{padding:22px 24px 30px;font-size:13.5px;line-height:1.7;color:var(--muted-strong);font-weight:300;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .pol-body .tw{overflow-x:auto;margin:8px 0 14px;border:1px solid var(--line);border-radius:var(--r-sm)}
+.pol-body table{width:100%;min-width:560px;border-collapse:collapse;font-size:12.5px}
 }
 </style>
 </head>
 <body>
 
-<div class="mclabel" data-i18n="mc.label">Comunicazione rivolta a investitori professionali · Non costituisce offerta al pubblico</div>
+<div class="mclabel" data-i18n="mc.label">Riservato a investitori professionali · Non costituisce offerta al pubblico</div>
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#top" class="logo" aria-label="IASON S.p.A.">Iason<span class="dot"></span></a>
     <div class="nav-links">
-      <a href="#chi-siamo" data-i18n="nav.1">Chi siamo</a>
-      <a href="#lavoro" data-i18n="nav.2">Come lavoriamo</a>
-      <a href="#asset" data-i18n="nav.3">L'asset class</a>
+      <a href="#iniziativa" data-i18n="nav.1">L'iniziativa</a>
+      <a href="#opportunita" data-i18n="nav.2">L'opportunità</a>
+      <a href="#processo" data-i18n="nav.3">Come funziona</a>
       <a href="#faq" data-i18n="nav.4">FAQ</a>
     </div>
     <div class="nav-right">
@@ -316,7 +338,7 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
         <button type="button" id="langIt" onclick="setLang('it')">IT</button>
         <button type="button" id="langEn" onclick="setLang('en')">EN</button>
       </div>
-      <a href="#contatto" class="btn" data-i18n="cta.nav">Prenota un confronto</a>
+      <a href="#registrazione" class="btn" data-i18n="cta.nav">Prenota la call</a>
     </div>
   </div>
 </nav>
@@ -325,25 +347,25 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
 <section class="hero" id="top">
   <div class="container">
     <h1 data-i18n="hero.h1">Nei crediti bancari si muovono miliardi ogni anno. <em>Ora puoi investirci anche tu.</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">IASON S.p.A. acquista portafogli di crediti bancari, utility, telco e retail con <strong>capitale proprio</strong> e ne gestisce il recupero in casa, con <strong>licenza art. 115 TULPS</strong>. Su singole operazioni valuta l'ingresso di un numero ristretto di investitori professionali.</p>
+    <p class="hero-sub" data-i18n="hero.sub">I grandi capitali comprano crediti dalle banche da anni. IASON S.p.A. apre questa porta a un <strong>numero ristretto di investitori professionali</strong>: entri accanto a chi compra con capitale proprio, su un'<strong>asset class che i mercati quotati non replicano</strong>.</p>
     <div class="hero-cta">
-      <a href="#contatto" class="btn" data-i18n="cta.main">Prenota un confronto conoscitivo</a>
-      <a href="#lavoro" class="btn btn-ghost" data-i18n="cta.why">Come lavoriamo</a>
+      <a href="#registrazione" class="btn" data-i18n="cta.main">Prenota la call con lo staff</a>
+      <a href="#opportunita" class="btn btn-ghost" data-i18n="cta.why">Scopri l'opportunità</a>
     </div>
-    <p class="hero-note" data-i18n="hero.note">Comunicazione rivolta a investitori professionali. Non costituisce offerta al pubblico né sollecitazione all'investimento.</p>
+    <p class="hero-note" data-i18n="hero.note">Pochi interlocutori per portafoglio. Pagina riservata a investitori professionali, non costituisce offerta al pubblico. <strong>Operazione illiquida e capitale a rischio</strong>: struttura e termini solo nel dossier, dopo NDA.</p>
   </div>
 </section>
 
-<!-- 01 CHI SIAMO -->
-<section class="sec" id="chi-siamo">
+<!-- 01 L'INIZIATIVA -->
+<section class="sec" id="iniziativa">
   <div class="container">
-    <div class="eyebrow" data-i18n="s1.eyebrow">01 · Chi siamo</div>
-    <h2 class="title" data-i18n="s1.title">Un operatore che compra in proprio. <strong>E lavora in casa.</strong></h2>
-    <p class="lead" data-i18n="s1.lead">Quando un credito smette di essere rimborsato, per chi lo ha erogato diventa un peso in bilancio. Per chi sa gestirlo diventa un <strong>flusso di incassi futuri</strong>, acquistato a valori <strong>inferiori al nominale</strong>. IASON acquista questi portafogli e ne segue il recupero <strong>in prima persona</strong>.</p>
+    <div class="eyebrow" data-i18n="s1.eyebrow">01 · L'iniziativa</div>
+    <h2 class="title" data-i18n="s1.title">Un mercato che si rigenera ogni trimestre. <strong>E un operatore che compra in proprio.</strong></h2>
+    <p class="lead" data-i18n="s1.lead">Quando un credito smette di essere rimborsato, per chi lo ha erogato diventa un peso in bilancio. Per chi sa gestirlo diventa un <strong>flusso di incassi futuri</strong>, acquistato oggi a valori <strong>inferiori al nominale</strong>. IASON acquista questi portafogli con capitale proprio e ne segue il recupero <strong>in prima persona</strong>.</p>
     <div class="steps">
-      <div class="step"><div class="step-num">01</div><h3 data-i18n="s1.st1h">Cosa acquistiamo</h3><p data-i18n="s1.st1p">Portafogli di crediti di natura <strong>bancaria, utility, telco e retail</strong>: <strong>migliaia di posizioni di piccolo taglio</strong>, ceduti periodicamente da chi li ha originati.</p></div>
-      <div class="step"><div class="step-num">02</div><h3 data-i18n="s1.st2h">Come acquistiamo</h3><p data-i18n="s1.st2p">Selezioniamo, valutiamo e <strong>compriamo i portafogli in proprio</strong>. <strong>Non un intermediario</strong>: la controparte del cedente è sempre la stessa.</p></div>
-      <div class="step"><div class="step-num">03</div><h3 data-i18n="s1.st3h">Come gestiamo</h3><p data-i18n="s1.st3p">Il recupero è <strong>gestito direttamente da IASON</strong>, titolare di <strong>licenza art. 115 TULPS</strong>. Chi compra il portafoglio è chi lo lavora: <strong>ogni posizione tracciata</strong>, ogni incasso riconciliato e riportato con cadenza regolare.</p></div>
+      <div class="step"><div class="step-num">01</div><h3 data-i18n="s1.st1h">Cosa si acquista</h3><p data-i18n="s1.st1p">Portafogli di crediti di natura <strong>bancaria, utility, telco e retail</strong>: <strong>migliaia di posizioni di piccolo taglio</strong>, ceduti periodicamente da chi li ha originati.</p></div>
+      <div class="step"><div class="step-num">02</div><h3 data-i18n="s1.st2h">Chi acquista</h3><p data-i18n="s1.st2p">IASON S.p.A., società operativa che seleziona, valuta e <strong>compra i portafogli in proprio</strong>. <strong>Non un intermediario</strong>: la controparte del cedente e dei co-investitori è sempre la stessa.</p></div>
+      <div class="step"><div class="step-num">03</div><h3 data-i18n="s1.st3h">Come si gestisce</h3><p data-i18n="s1.st3p">Il recupero è <strong>gestito direttamente da IASON</strong>, titolare di <strong>licenza art. 115 TULPS</strong>; per i crediti in sofferenza interviene <strong>[NOME GESTORE]</strong>, gestore iscritto all'albo ex art. 114.6 TUB. <strong>Ogni posizione tracciata</strong>, ogni incasso riconciliato e riportato con cadenza regolare.</p></div>
       <div class="step"><div class="step-num">04</div><h3 data-i18n="s1.st4h">Come si incassa</h3><p data-i18n="s1.st4p">Gli incassi maturano <strong>progressivamente</strong> lungo il ciclo di recupero: molte posizioni si chiudono con <strong>piani di rientro negoziati</strong>, molto prima dei tempi dei tribunali.</p></div>
     </div>
     <div class="lic">
@@ -356,64 +378,73 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
   </div>
 </section>
 
-<!-- 02 COME LAVORIAMO -->
-<section class="sec alt" id="lavoro">
+<!-- 02 L'OPPORTUNITÀ -->
+<section class="sec alt" id="opportunita">
   <div class="container">
-    <div class="eyebrow" data-i18n="s2.eyebrow">02 · Come lavoriamo</div>
-    <h2 class="title" data-i18n="s2.title">Dal tape all'incasso, <strong>in quattro fasi.</strong></h2>
-    <p class="lead" data-i18n="s2.lead">Un processo disciplinato e tracciato, uguale per ogni portafoglio.</p>
-    <div class="flow">
-      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg></div><div><div class="fn">01</div><h4 data-i18n="f1h">Selezione</h4><p data-i18n="f1p">Analizziamo i portafogli in cessione: <strong>anzianità, documentazione</strong>, tipologia di debitore, <strong>storico dei pagamenti</strong>.</p><div class="flow-tag" data-i18n="f1t">Due diligence <strong>sul tape</strong></div></div></div>
-      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg></div><div><div class="fn">02</div><h4 data-i18n="f2h">Pricing</h4><p data-i18n="f2p">Prezziamo sul <strong>recupero minimo atteso</strong>, non sulla media. Il prezzo d'acquisto è la <strong>prima tutela del risultato</strong>.</p><div class="flow-tag" data-i18n="f2t">Modello <strong>prudenziale</strong></div></div></div>
-      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M10 20v-6h4v6"/></svg></div><div><div class="fn">03</div><h4 data-i18n="f3h">Acquisto</h4><p data-i18n="f3p">Acquistiamo con <strong>capitale proprio</strong>. IASON è la <strong>controparte diretta del cedente</strong>, senza intermediari.</p><div class="flow-tag" data-i18n="f3t">Capitale <strong>proprio</strong></div></div></div>
-      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 16v-4M10 16V8M15 16v-6M20 16V5"/></svg></div><div><div class="fn">04</div><h4 data-i18n="f4h">Recupero e reporting</h4><p data-i18n="f4p">Lavoriamo ogni posizione <strong>in casa</strong> con licenza art. 115. Incassi <strong>riconciliati e riportati</strong> con cadenza regolare.</p><div class="flow-tag" data-i18n="f4t">Licenza <strong>art. 115</strong></div></div></div>
+    <div class="eyebrow" data-i18n="s2.eyebrow">02 · L'opportunità</div>
+    <h2 class="title" data-i18n="s2.title">Perché questa operazione merita <em>una call di trenta minuti.</em></h2>
+    <p class="lead" data-i18n="s2.lead">Non è un ciclo passeggero: le regole europee spingono <strong>stabilmente</strong> le banche a cedere ciò che non performa, e chi sa comprare ha un <strong>vantaggio strutturale</strong>.</p>
+    <div class="risk">
+      <div class="eyebrow" data-i18n="s2.w.eyebrow">Parliamone chiaramente</div>
+      <p data-i18n="s2.w.p1">L'investimento è <strong>illiquido</strong> per la durata del ciclo di recupero, gli incassi possono essere <strong>inferiori o più lenti del previsto</strong> e la qualità della gestione è decisiva. <strong>Non vendiamo certezze</strong>: condividiamo numeri, dati storici e struttura con chi ha le competenze per valutarli.</p>
+      <p data-i18n="s2.w.p2">Per questo struttura e termini non sono su questa pagina: li trovi nel dossier riservato, dopo l'NDA, e li discutiamo dal vivo con il nostro staff.</p>
     </div>
-  </div>
-</section>
-
-<!-- 03 ASSET CLASS -->
-<section class="sec" id="asset">
-  <div class="container">
-    <div class="eyebrow" data-i18n="s3.eyebrow">03 · L'asset class</div>
-    <h2 class="title" data-i18n="s3.title">Perché i crediti sono <em>un'asset class a sé.</em></h2>
-    <p class="lead" data-i18n="s3.lead">Non è un ciclo passeggero: le regole europee spingono <strong>stabilmente</strong> le banche a cedere ciò che non performa. Quattro <strong>caratteristiche strutturali</strong> del mercato in cui operiamo.</p>
     <div class="drivers">
-      <div class="drv">
-        <div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M12 11l4 4"/></svg></div>
-        <h4 data-i18n="d1h">Il valore nasce dal prezzo d'acquisto</h4><p data-i18n="d1p">Si compra <strong>una frazione del valore nominale</strong> e si incassa ciò che si recupera. L'esito dipende dalla disciplina con cui si prezza e si gestisce, <strong>non da un indice di borsa</strong>. Per questo il nostro modello prezza sul <strong>recupero minimo atteso</strong>, non sulla media.</p>
-      </div>
-      <div class="drv">
-        <div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 5-6 8-6s5 4 10 1" opacity=".45"/><path d="M3 9h3l2 4 3-8 3 6 2-2h5"/></svg></div>
-        <h4 data-i18n="d2h">Flussi indipendenti dai mercati quotati</h4><p data-i18n="d2p">Gli incassi arrivano da piani di rientro e recuperi su migliaia di posizioni. <strong>Non seguono i tassi, gli spread o il sentiment</strong>: seguono il lavoro di recupero.</p>
-      </div>
-      <div class="drv">
-        <div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="5" r="1.6"/><circle cx="12" cy="5" r="1.6"/><circle cx="19" cy="5" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/><circle cx="5" cy="19" r="1.6"/><circle cx="12" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/></svg></div>
-        <h4 data-i18n="d3h">Granulare per costruzione</h4><p data-i18n="d3p"><strong>Migliaia di debitori</strong>, importi piccoli, aree geografiche diverse. <strong>Nessuna singola posizione</strong> può compromettere il risultato del portafoglio: il rischio è <strong>distribuito per costruzione</strong>.</p>
-      </div>
-      <div class="drv">
-        <div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-3 4 4 5-5 3 3"/><path d="M3 12v8h18v-8"/><path d="M8 20v-4M12 20v-6M16 20v-5"/></svg></div>
-        <h4 data-i18n="d4h">Capitale proprio in ogni lotto</h4><p data-i18n="d4p">IASON mette <strong>capitale proprio</strong> in ogni portafoglio che acquista. Chi seleziona, chi paga e chi recupera sono la stessa società: <strong>interessi allineati</strong> lungo tutta la filiera.</p>
-      </div>
+      <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M12 11l4 4"/></svg></div><h4 data-i18n="s2.d1h">Il valore nasce dal prezzo d'ingresso</h4><p data-i18n="s2.d1p">Si compra <strong>una frazione del valore nominale</strong> e si incassa ciò che si recupera. Il risultato dipende dalla disciplina con cui si prezza e si gestisce, <strong>non da un indice di borsa</strong>. È per questo che il nostro modello prezza sul <strong>recupero minimo atteso</strong>, non sulla media.</p></div>
+      <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 5-6 8-6s5 4 10 1" opacity=".45"/><path d="M3 9h3l2 4 3-8 3 6 2-2h5"/></svg></div><h4 data-i18n="s2.d2h">Decorrelato da azioni e obbligazioni</h4><p data-i18n="s2.d2p">Gli incassi dipendono da <strong>piani di rientro e recuperi</strong>, non dall'andamento di un listino: una fonte di flussi <strong>con logiche proprie</strong>.</p></div>
+      <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="5" cy="19" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="19" r="1.6" fill="currentColor" stroke="none"/></svg></div><h4 data-i18n="s2.d3h">Granulare per costruzione</h4><p data-i18n="s2.d3p"><strong>Migliaia di posizioni di piccolo taglio</strong>, aree geografiche diverse: la struttura del portafoglio <strong>riduce la dipendenza dal singolo debitore</strong>.</p></div>
+      <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-3 4 4 5-5 3 3"/><path d="M3 12v8h18v-8"/><path d="M8 20v-4M12 20v-6M16 20v-5"/></svg></div><h4 data-i18n="s2.d4h">Investi accanto a chi compra</h4><p data-i18n="s2.d4p">IASON mette <strong>capitale proprio</strong> nel lotto e invita pochi co-investitori sul singolo portafoglio, con un <strong>rapporto diretto</strong> e senza strati di intermediazione. <strong>Interessi allineati</strong>, operazione trasparente, <strong>dossier completo</strong> prima di ogni decisione.</p></div>
+    </div>
+    <div class="cta-row"><a href="#registrazione" class="btn" data-i18n="cta.main">Prenota la call con lo staff</a><span data-i18n="cta.sub">Nessun impegno. Trenta minuti con chi segue l'operazione.</span></div>
+  </div>
+</section>
+
+<!-- 03 COME FUNZIONA -->
+<section class="sec" id="processo">
+  <div class="container">
+    <div class="eyebrow" data-i18n="s3.eyebrow">03 · Come funziona</div>
+    <h2 class="title" data-i18n="s3.title">Dalla registrazione al dossier, <strong>in quattro passaggi.</strong></h2>
+    <p class="lead" data-i18n="s3.lead">Un percorso riservato e tracciato. Nessun materiale circola prima della verifica dei requisiti e della firma dell'accordo di riservatezza.</p>
+    <div class="flow">
+      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m10 15 1.5 1.5L15 13"/></svg></div><div><div class="fn">01</div><h4 data-i18n="f1h">Registrazione</h4><p data-i18n="f1p">Compili il form in due minuti e scegli subito data e ora della call.</p><div class="flow-tag" data-i18n="f1t">Tempo: <strong>2 minuti</strong></div></div></div>
+      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.7a2 2 0 0 1 1.7 2z"/></svg></div><div><div class="fn">02</div><h4 data-i18n="f2h">Call con lo staff</h4><p data-i18n="f2p">Ti illustriamo l'operazione, rispondiamo alle tue domande e verifichiamo la qualifica di investitore professionale.</p><div class="flow-tag" data-i18n="f2t">Tempo: <strong>30 minuti</strong></div></div></div>
+      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 14h6M9 17h4"/></svg></div><div><div class="fn">03</div><h4 data-i18n="f3h">NDA reciproco</h4><p data-i18n="f3p">Firmiamo entrambi un accordo di riservatezza. Tutela te e tutela noi.</p><div class="flow-tag" data-i18n="f3t">Riservatezza <strong>reciproca</strong></div></div></div>
+      <div class="flow-step"><div class="flow-dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="12" cy="15" r="3"/><path d="M12 14v1l.8.8"/></svg></div><div><div class="fn">04</div><h4 data-i18n="f4h">Dossier riservato</h4><p data-i18n="f4p">Ricevi il dossier completo su canale privato e tracciato: struttura, dati, termini. Poi decidi tu.</p><div class="flow-tag" data-i18n="f4t">Canale <strong>privato</strong></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- 04 CONTATTO -->
-<section class="sec alt" id="contatto">
+<!-- 04 A CHI SI RIVOLGE -->
+<section class="sec alt" id="target">
   <div class="container">
-    <div class="eyebrow" data-i18n="s4.eyebrow">04 · Contatto</div>
-    <h2 class="title" data-i18n="s4.title">Vuoi conoscere IASON? <strong>Trenta minuti</strong> <em>con il nostro staff.</em></h2>
+    <div class="eyebrow" data-i18n="s4.eyebrow">04 · A chi si rivolge</div>
+    <h2 class="title" data-i18n="s4.title">Pochi posti, <em>interlocutori selezionati.</em></h2>
+    <p class="lead" data-i18n="s4.lead">Il co-investimento sul singolo portafoglio è riservato a investitori professionali in grado di valutare in autonomia struttura e rischi dell'operazione.</p>
+    <div class="target">
+      <div class="tg"><h4 data-i18n="t1h">Family office</h4><p data-i18n="t1p">Cercano <strong>flussi reali, decorrelati</strong> e un rapporto diretto con chi gestisce il capitale.</p></div>
+      <div class="tg"><h4 data-i18n="t2h">Investitori istituzionali</h4><p data-i18n="t2p">Vogliono accesso a un'asset class di <strong>private credit</strong> con governance e reporting chiari.</p></div>
+      <div class="tg"><h4 data-i18n="t3h">Investitori professionali privati</h4><p data-i18n="t3p">Hanno i requisiti di legge e cercano <strong>operazioni dirette</strong>, senza strati di intermediazione.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 REGISTRAZIONE -->
+<section class="sec" id="registrazione">
+  <div class="container">
+    <div class="eyebrow" data-i18n="s5.eyebrow">05 · Registrazione</div>
+    <h2 class="title" data-i18n="s5.title">Due minuti per registrarti. <strong>Trenta minuti</strong> <em>con chi segue l'operazione.</em></h2>
     <div class="form-wrap">
       <aside class="aside">
         <div class="aside-head">
           <div class="mk" data-i18n="as.k">Cosa succede in call</div>
-          <h3 data-i18n="as.h">Un confronto conoscitivo, <em>non una presentazione.</em></h3>
-          <p data-i18n="as.p">Nessuna slide commerciale. Trenta minuti con <strong>chi seleziona e lavora i portafogli</strong>, per conoscerci e rispondere alle tue domande.</p>
+          <h3 data-i18n="as.h">Un confronto diretto, <em>non una presentazione.</em></h3>
+          <p data-i18n="as.p">Nessuna slide commerciale. Trenta minuti con <strong>chi seleziona e lavora i portafogli</strong>, per capire se l'operazione fa per te.</p>
         </div>
         <ul class="agenda">
-          <li><span class="tm">0–10'</span><div><b data-i18n="ag1h">Chi siamo</b><span data-i18n="ag1p">Storia, team, <strong>licenza art. 115</strong>, cosa compriamo e perché.</span></div></li>
-          <li><span class="tm">10–20'</span><div><b data-i18n="ag2h">Come lavoriamo un portafoglio</b><span data-i18n="ag2p">Selezione, <strong>pricing prudenziale</strong>, <strong>recupero in casa</strong>, reporting.</span></div></li>
-          <li><span class="tm">20–30'</span><div><b data-i18n="ag3h">Le tue domande</b><span data-i18n="ag3p">Mercato, processo, governance: rispondiamo a tutto ciò che vuoi sapere.</span></div></li>
+          <li><span class="tm">0–5'</span><div><b data-i18n="ag1h">I tuoi obiettivi</b><span data-i18n="ag1p">Orizzonte, taglio, cosa cerchi in un investimento decorrelato.</span></div></li>
+          <li><span class="tm">5–15'</span><div><b data-i18n="ag2h">Come funziona una cessione</b><span data-i18n="ag2p">Chi vende, chi compra, dove nasce il valore e chi ci guadagna.</span></div></li>
+          <li><span class="tm">15–25'</span><div><b data-i18n="ag3h">Come leggiamo un portafoglio</b><span data-i18n="ag3p">Anzianità, documentazione, recuperabilità, ciclo degli incassi mese per mese.</span></div></li>
+          <li><span class="tm">25–30'</span><div><b data-i18n="ag4h">Rischi, governance e passi successivi</b><span data-i18n="ag4p">Licenza art. 115, gestore 114.6, tutele per il co-investitore, verifica requisiti.</span></div></li>
         </ul>
         <div class="aside-foot">
           <div class="af"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>30'</b><span data-i18n="af1">Video o telefono, quando preferisci</span></div>
@@ -423,72 +454,90 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
       </aside>
 
       <div class="form-card">
-        <h3 data-i18n="s4.h">Prenota un <strong>confronto conoscitivo.</strong></h3>
-        <p data-i18n="s4.p">Compila il form e scegli subito data e ora. Nessuna sottoscrizione, nessun impegno.</p>
+        <h3 data-i18n="s5.h">Parla con il <strong>nostro staff.</strong></h3>
+        <p data-i18n="s5.p">Compila il form e scegli subito data e ora della call. Nessuna sottoscrizione, nessun impegno.</p>
         <form class="lead-form" id="leadForm" onsubmit="submitLead(event)" novalidate>
           <div class="field"><label for="f_first" data-i18n="ph.first">Nome *</label><input class="input" id="f_first" type="text" name="firstname" required autocomplete="given-name"></div>
           <div class="field"><label for="f_last" data-i18n="ph.last">Cognome *</label><input class="input" id="f_last" type="text" name="lastname" required autocomplete="family-name"></div>
-          <div class="field"><label for="f_role" data-i18n="ph.role">Ruolo *</label><input class="input" id="f_role" type="text" name="role" required autocomplete="organization-title"></div>
-          <div class="field"><label for="f_company" data-i18n="ph.company">Società *</label><input class="input" id="f_company" type="text" name="company" required autocomplete="organization"></div>
           <div class="field"><label for="f_email" data-i18n="ph.email">Email *</label><input class="input" id="f_email" type="email" name="email" required autocomplete="email"></div>
           <div class="field"><label for="f_phone" data-i18n="ph.phone">Telefono</label><input class="input" id="f_phone" type="tel" name="phone" autocomplete="tel"></div>
           <div class="field"><label for="f_type" data-i18n="opt.type">Tipo di investitore *</label>
-            <select class="input" id="f_type" name="type" required>
+            <select class="input" id="f_type" name="type" required onchange="onType(this.value)">
               <option value=""></option>
               <option value="family-office">Family office</option>
               <option value="istituzionale" data-i18n="opt.inst">Investitore istituzionale</option>
               <option value="privato" data-i18n="opt.priv">Investitore professionale privato</option>
             </select></div>
-          <div class="field"><label for="f_interest" data-i18n="int.l">Mi interessa *</label>
+          <div class="field"><label for="f_country" data-i18n="opt.country">Paese di residenza *</label>
+            <select class="input" id="f_country" name="country" required onchange="onCountry(this.value)">
+              <option value=""></option>
+              <option value="IT" data-i18n="c.IT">Italia</option>
+              <option value="CH" data-i18n="c.CH">Svizzera</option>
+              <option value="LU" data-i18n="c.LU">Lussemburgo</option>
+              <option value="DE" data-i18n="c.DE">Germania</option>
+              <option value="FR" data-i18n="c.FR">Francia</option>
+              <option value="GB" data-i18n="c.GB">Regno Unito</option>
+              <option value="OTHER" data-i18n="c.OTHER">Altro</option>
+            </select></div>
+          <div class="field"><label for="f_company" id="l_company" data-i18n="ph.company">Società / ente di appartenenza</label><input class="input" id="f_company" type="text" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="f_role" id="l_role" data-i18n="ph.role">Ruolo</label><input class="input" id="f_role" type="text" name="role" autocomplete="organization-title"></div>
+          <div class="field full"><label for="f_interest" data-i18n="int.l">Mi interessa *</label>
             <select class="input" id="f_interest" name="interest" required>
               <option value=""></option>
-              <option value="conoscere" data-i18n="int.1">Conoscere l'attività di IASON</option>
+              <option value="co-investimento" data-i18n="int.1">Il co-investimento su questo portafoglio</option>
               <option value="prossime" data-i18n="int.2">Essere informato sulle prossime operazioni</option>
-              <option value="confronto" data-i18n="int.3">Un primo confronto</option>
+              <option value="confronto" data-i18n="int.3">Per ora solo un primo confronto</option>
             </select></div>
+          <div class="juris" id="jurisNote" data-i18n="juris">Per residenti fuori dall'Italia la richiesta viene <strong>verificata manualmente</strong> dallo staff prima di qualsiasi invio: non riceverai link di prenotazione automatici, ti contatteremo noi dopo aver verificato la compatibilità con la normativa locale.</div>
           <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-          <label class="check strong full"><input type="checkbox" name="professional" required><span data-i18n="s4.pro">* Dichiaro di essere un investitore professionale ai sensi dell'Allegato II della Direttiva 2014/65/UE (MiFID II) e di essere consapevole che questa comunicazione non costituisce offerta al pubblico né sollecitazione all'investimento.</span></label>
-          <label class="check full"><input type="checkbox" name="privacy_ack" required><span data-i18n="s4.c1">* Ho letto l'<a href="#privacy" onclick="openPolicy('privacy');return false">Informativa privacy</a>. I dati sono trattati da IASON S.p.A. per organizzare il confronto richiesto (base giuridica: misure precontrattuali su richiesta dell'interessato).</span></label>
-          <label class="check full"><input type="checkbox" name="consent_contact"><span data-i18n="s4.c2">Acconsento a essere ricontattato da IASON S.p.A. via email e, se indicato, telefono per proseguire il dialogo e ricevere informazioni sull'attività della società (facoltativo; revocabile in qualsiasi momento).</span></label>
-          <button type="submit" class="btn full" id="leadBtn" data-i18n="cta.form">Prenota un confronto conoscitivo</button>
-          <p class="req-note full" data-i18n="req">* Campo obbligatorio</p>
+          <label class="check strong full"><input type="checkbox" name="professional" required><span data-i18n="s5.pro">* Dichiaro di rientrare tra gli investitori professionali (Allegato II, Direttiva 2014/65/UE) e sono consapevole che la qualifica sarà verificata prima dell'accesso a qualsiasi documentazione.</span></label>
+          <label class="check full"><input type="checkbox" name="consent_contact" required><span data-i18n="s5.c2">* Acconsento a essere ricontattato da IASON S.p.A. via email e, se indicato, telefono per fissare la call e proseguire il dialogo. Posso revocare il consenso in qualsiasi momento.</span></label>
+          <label class="check full"><input type="checkbox" name="privacy_ack"><span data-i18n="s5.c1">Ho letto la <a href="#privacy" onclick="openPolicy('privacy');return false">Privacy Policy</a> e i <a href="#terms" onclick="openPolicy('terms');return false">Termini di utilizzo</a>. I dati sono trattati da IASON S.p.A. per gestire la richiesta (base giuridica: misure precontrattuali su richiesta dell'interessato).</span></label>
+          <button type="submit" class="btn full" id="leadBtn" data-i18n="cta.form">Prenota la call con lo staff</button>
+          <p class="req-note full" data-i18n="req">* Campo obbligatorio · Società e ruolo obbligatori per family office e investitori istituzionali</p>
         </form>
+        <p class="form-note" data-i18n="s5.note">Per residenti fuori dall'Italia l'accesso al dossier è subordinato a verifica della normativa locale.</p>
         <div class="success" id="leadSuccess">
-          <h4 data-i18n="ok.h">Richiesta ricevuta. <em>Ora scegli quando sentirci.</em></h4>
-          <p data-i18n="ok.p">Troverai la conferma nella tua casella. Scegli data e ora in un clic: trenta minuti, nessun impegno.</p>
-          <a id="calBtn" href="#" target="_blank" rel="noopener" class="btn" data-i18n="ok.btn">Scegli data e ora</a>
+          <h4 data-i18n="ok.h">Registrazione ricevuta. <em>Ora scegli quando sentirci.</em></h4>
+          <p data-i18n="ok.p">Troverai la conferma nella tua casella. Scegli data e ora della call in un clic: trenta minuti, nessun impegno.</p>
+          <a id="calBtn" href="#" target="_blank" rel="noopener" class="btn" data-i18n="ok.btn">Scegli data e ora della call</a>
           <ol>
-            <li data-i18n="ok.1"><strong>In call:</strong> ci conosciamo e rispondiamo alle tue domande</li>
-            <li data-i18n="ok.2"><strong>Dopo:</strong> eventuali rapporti successivi con investitori professionali sono valutati singolarmente, al di fuori di questo sito</li>
+            <li data-i18n="ok.1"><strong>Alla call:</strong> ci conosciamo, verifichiamo i requisiti e ti illustriamo l'operazione</li>
+            <li data-i18n="ok.2"><strong>NDA reciproco:</strong> firmiamo l'accordo di riservatezza</li>
+            <li data-i18n="ok.3"><strong>Dossier riservato:</strong> struttura, dati e termini su canale privato</li>
           </ol>
+        </div>
+        <div class="success" id="leadSuccessManual">
+          <h4 data-i18n="okm.h">Richiesta ricevuta. <em>Ti contatteremo noi.</em></h4>
+          <p data-i18n="okm.p">Per i residenti fuori dall'Italia verifichiamo prima la compatibilità con la normativa locale. Riceverai una risposta dallo staff entro pochi giorni lavorativi; nessun materiale viene inviato prima di tale verifica.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 05 FAQ -->
-<section class="sec" id="faq">
+<!-- 06 FAQ -->
+<section class="sec alt" id="faq">
   <div class="container">
-    <div class="eyebrow" data-i18n="s5.eyebrow">05 · Domande frequenti</div>
-    <h2 class="title" data-i18n="s5.title">Quello che ci chiedono <em>prima della call.</em></h2>
+    <div class="eyebrow" data-i18n="s6.eyebrow">06 · Domande frequenti</div>
+    <h2 class="title" data-i18n="s6.title">Quello che ci chiedono <em>prima della call.</em></h2>
     <div class="faq">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">01</span><span data-i18n="q1">Chi è IASON?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a1"><strong>IASON S.p.A.</strong> è una società italiana con sede a Roma, iscritta al Registro delle Imprese di Roma (C.F. 18617101003), che acquista portafogli di crediti con <strong>capitale proprio</strong> e ne gestisce <strong>direttamente il recupero</strong> in forza della licenza art. 115 TULPS.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">02</span><span data-i18n="q2">È un'offerta di investimento?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a2">No. IASON non offre prodotti al pubblico e <strong>non presta servizi di investimento, collocamento o consulenza</strong>. Questa pagina presenta l'attività della società e raccoglie richieste di contatto da investitori professionali. Eventuali rapporti con investitori professionali sono valutati singolarmente e regolati da documentazione dedicata, al di fuori di questo sito.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">03</span><span data-i18n="q3">Perché non ci sono numeri sulla pagina?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a3">IASON non pubblica dati sulle singole operazioni. Prezzi, struttura e dati storici sono <strong>riservati</strong> e non vengono comunicati tramite questo sito.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">04</span><span data-i18n="q4">Cosa succede dopo la prenotazione?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a4">Ricevi subito la conferma e il link per scegliere data e ora. In call ci conosciamo, raccontiamo come lavoriamo e rispondiamo alle tue domande. Non viene proposto né sottoscritto nulla.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">05</span><span data-i18n="q5">Come vengono trattati i miei dati?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a5">IASON S.p.A. è titolare del trattamento. I dati servono a organizzare il confronto e, solo se hai acconsentito, a ricontattarti. Non vengono ceduti a terzi per finalità commerciali; i fornitori tecnici (email, hosting, calendario) operano come responsabili del trattamento. Dettagli nell'<a href="#privacy" onclick="openPolicy('privacy');return false" style="color:var(--gold);text-decoration:underline">Informativa privacy</a>.</p></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">06</span><span data-i18n="q6">Quali sono i rischi dell'attività?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a6">L'attività di acquisto e recupero di crediti comporta rischi significativi: recupero inferiore o più lento del previsto, illiquidità per la durata del ciclo, dipendenza dalla qualità della gestione, rischio normativo e fiscale, <strong>possibile perdita del capitale impiegato</strong>. Ne parliamo apertamente in call.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">01</span><span data-i18n="q1">Chi è IASON?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a1"><strong>IASON S.p.A.</strong> è una società italiana con sede a Roma, iscritta al Registro delle Imprese di Roma (C.F. 18617101003), che acquista portafogli di crediti con <strong>capitale proprio</strong> ed è titolare di licenza art. 115 TULPS. La gestione del recupero dei crediti in sofferenza è affidata a <strong>[NOME GESTORE]</strong>, gestore di crediti in sofferenza iscritto all'albo ex art. 114.6 TUB. È la controparte diretta di chi cede i crediti e di chi co-investe.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">02</span><span data-i18n="q2">È un'offerta di investimento?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a2">No. Questa pagina raccoglie manifestazioni di interesse da investitori professionali. <strong>Non è un'offerta al pubblico</strong>, non chiede denaro e non contiene alcuna proposta contrattuale. Ogni eventuale co-investimento avviene in privato, su base individuale, dopo la verifica dei requisiti e con documentazione contrattuale dedicata.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">03</span><span data-i18n="q3">Perché i numeri non sono sulla pagina?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a3">Perché un'operazione seria si valuta su un dossier completo, non su un titolo. Prezzi, struttura e dati storici sono <strong>riservati</strong> e vengono condivisi solo dopo la firma dell'accordo di riservatezza reciproco, su canale privato e tracciato.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">04</span><span data-i18n="q4">Cosa succede dopo la registrazione?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a4">Ricevi subito la conferma e il link per scegliere data e ora. In call verifichiamo la qualifica di investitore professionale e ti illustriamo l'operazione. Se c'è interesse da entrambe le parti, firmiamo l'<strong>NDA reciproco</strong> e ricevi il dossier. Nessun materiale prima.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">05</span><span data-i18n="q5">Come vengono trattati i miei dati?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a5">IASON S.p.A. è titolare del trattamento. I dati servono a organizzare la call, verificare i requisiti e, con il tuo consenso, ricontattarti. Non vengono ceduti a terzi per finalità commerciali; i fornitori tecnici (email, hosting, calendario) operano come responsabili del trattamento. Dettagli nell'<a href="#privacy" onclick="openPolicy('privacy');return false" style="color:var(--gold);text-decoration:underline">Informativa privacy</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false"><span><span class="n">06</span><span data-i18n="q6">Quali sono i rischi?</span></span><span>+</span></button><div class="faq-a"><p data-i18n="a6">Recupero inferiore o più lento del previsto, illiquidità per la durata del ciclo, dipendenza dalla qualità della gestione, rischio normativo e fiscale, <strong>possibile perdita del capitale</strong>. Li descriviamo in dettaglio nel dossier e li discutiamo apertamente in call.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="band" id="cta">
   <div class="container">
-    <h2 data-i18n="band.h">Vuoi conoscere IASON? <em>Parliamone.</em></h2>
-    <p data-i18n="band.p">Trenta minuti con il nostro staff per capire <strong>chi siamo</strong> e <strong>come lavoriamo i portafogli</strong>.</p>
-    <a href="#contatto" class="btn" data-i18n="cta.main">Prenota un confronto conoscitivo</a>
+    <h2 data-i18n="band.h">Il prossimo portafoglio <em>è in valutazione.</em></h2>
+    <p data-i18n="band.p">Prenota trenta minuti con lo staff IASON. Capirai <strong>come è strutturata l'operazione</strong> e <strong>cosa comporta</strong>.</p>
+    <a href="#registrazione" class="btn" data-i18n="cta.main">Prenota la call con lo staff</a>
   </div>
 </section>
 
@@ -498,7 +547,7 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
     <div class="foot-top">
       <div class="foot-brand">
         <a href="#top" class="logo" aria-label="IASON S.p.A.">Iason<span class="dot"></span></a>
-        <p data-i18n="foot.brand">Società specializzata nell'acquisto con capitale proprio e nel recupero di portafogli di crediti, con licenza art. 115 TULPS. Aperta a partnership con investitori professionali su singole operazioni.</p>
+        <p data-i18n="foot.brand">Società specializzata nell'acquisto in proprio e nella gestione di portafogli di crediti, con co-investimento riservato a investitori professionali.</p>
       </div>
       <div class="foot-col">
         <h5 data-i18n="foot.legal">Informazioni legali</h5>
@@ -514,9 +563,10 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
       <div class="foot-col">
         <h5 data-i18n="foot.links">Link utili</h5>
         <ul>
-          <li><a href="#contatto" data-i18n="cta.nav">Prenota un confronto</a></li>
+          <li><a href="#registrazione" data-i18n="cta.nav">Prenota la call</a></li>
           <li><a href="#privacy" onclick="openPolicy('privacy');return false">Privacy Policy</a></li>
           <li><a href="#cookie-policy" onclick="openPolicy('cookie');return false">Cookie Policy</a></li>
+          <li><a href="#terms" onclick="openPolicy('terms');return false" data-i18n="foot.terms">Termini di utilizzo</a></li>
           <li><a href="#" onclick="reopenCookie();return false" data-i18n="foot.ckpref">Preferenze cookie</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -524,16 +574,17 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
     </div>
     <div class="foot-legal">
       <h6 data-i18n="foot.disc">Note legali</h6>
-      <p data-i18n="foot.d0"><strong>IASON S.p.A. non è un intermediario finanziario e non presta servizi di investimento, collocamento o consulenza.</strong> La società svolge attività di acquisto e recupero di crediti in forza della licenza di cui all'art. 115 R.D. 773/1931.</p>
-      <p data-i18n="foot.d1"><strong>Comunicazione rivolta a investitori professionali.</strong> Questa pagina è pubblicata da IASON S.p.A. ed è rivolta esclusivamente a investitori professionali ai sensi dell'Allegato II della Direttiva 2014/65/UE (MiFID II) e della normativa italiana applicabile, residenti in Italia. Descrive in termini generali l'attività della società e raccoglie richieste di contatto non vincolanti.</p>
-      <p data-i18n="foot.d2">Nulla di quanto contenuto in questa pagina costituisce offerta al pubblico, sollecitazione all'investimento, raccolta di risparmio, raccomandazione o consulenza in materia di investimenti, legale o fiscale. Nessuna proposta contrattuale è formulata tramite questa pagina. Eventuali rapporti con investitori professionali sono valutati singolarmente, al di fuori di questo sito, previa verifica dei requisiti e nel rispetto delle esenzioni previste dalla normativa.</p>
-      <p data-i18n="foot.d3">L'attività di acquisto e recupero di crediti comporta rischi significativi, inclusa la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. Questa comunicazione non è destinata a soggetti residenti al di fuori dell'Italia; l'accesso non è consentito a soggetti residenti in giurisdizioni in cui la diffusione di queste informazioni non sia conforme alla normativa locale. Titolare del trattamento dei dati personali: IASON S.p.A.</p>
+      <p data-i18n="foot.d1"><strong>Comunicazione riservata a investitori professionali.</strong> Questa pagina è pubblicata da IASON S.p.A. ed è rivolta esclusivamente a investitori professionali ai sensi dell'Allegato II della Direttiva 2014/65/UE (MiFID II) e della normativa italiana applicabile. Descrive in termini generali un'attività di acquisto e gestione di portafogli di crediti e raccoglie manifestazioni di interesse non vincolanti. La qualifica di investitore professionale è verificata da IASON S.p.A. prima dell'accesso a qualsiasi documentazione.</p>
+      <p data-i18n="foot.d2">Nulla di quanto contenuto in questa pagina costituisce offerta al pubblico, sollecitazione all'investimento, raccolta di risparmio, raccomandazione o consulenza in materia di investimenti, legale o fiscale. Nessuna proposta contrattuale è formulata tramite questa pagina. L'eventuale co-investimento avviene tramite <strong>[cessione pro quota / strumenti emessi da veicolo ex L. 130/99]</strong>, su base bilaterale, con documentazione dedicata e previa verifica dei requisiti, nel rispetto delle esenzioni previste dalla normativa.</p>
+      <p data-i18n="foot.d4">La gestione del recupero dei crediti in sofferenza è affidata a <strong>[NOME GESTORE]</strong>, gestore di crediti in sofferenza iscritto all'albo di cui all'art. 114.6 del D.Lgs. 385/1993. IASON S.p.A. è titolare di licenza ex art. 115 R.D. 773/1931 e non è un intermediario finanziario ai sensi dell'art. 106 del D.Lgs. 385/1993.</p>
+      <p data-i18n="foot.d3">Le operazioni sui portafogli di crediti comportano rischi significativi, inclusa la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. Per residenti fuori dall'Italia l'accesso al dossier è subordinato a verifica della normativa locale; l'accesso non è consentito a soggetti residenti in giurisdizioni in cui la diffusione di queste informazioni non sia conforme alla normativa locale. Titolare del trattamento dei dati personali: IASON S.p.A.</p>
     </div>
     <div class="foot-bottom">
-      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v4.3 · Ottobre 2026</div>
+      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v5.1 · Ottobre 2026</div>
       <div class="foot-links">
         <a href="#privacy" onclick="openPolicy('privacy');return false">Privacy</a>
         <a href="#cookie-policy" onclick="openPolicy('cookie');return false">Cookie</a>
+        <a href="#terms" onclick="openPolicy('terms');return false" data-i18n="foot.terms2">Termini</a>
       </div>
     </div>
   </div>
@@ -543,19 +594,20 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
 <dialog class="policy" id="dlgPrivacy">
   <div class="pol-head"><h3>Informativa sul trattamento dei dati personali</h3><button type="button" onclick="closePolicy('privacy')" aria-label="Chiudi">×</button></div>
   <div class="pol-body">
-    <p>Resa ai sensi dell'art. 13 del Regolamento (UE) 2016/679 ("GDPR") e del D.Lgs. 196/2003. Versione 4.0 · Ottobre 2026.</p>
+    <p>Resa ai sensi dell'art. 13 del Regolamento (UE) 2016/679 ("GDPR") e del D.Lgs. 196/2003. Versione 5.0 · Ottobre 2026.</p>
     <h4>1. Titolare del trattamento</h4>
     <p><strong>IASON S.p.A.</strong>, sede legale in Viale Luigi Schiavonetti 278, 00173 Roma (RM), C.F./P.IVA 18617101003, REA RM-1795823. Email: <a href="mailto:info@iason.com" style="color:var(--gold)">info@iason.com</a> · PEC: iasonsrl@legalmail.it. Il Titolare non ha nominato un Responsabile della protezione dei dati, non ricorrendone i presupposti ex art. 37 GDPR.</p>
     <h4>2. Dati trattati</h4>
     <p>Dati identificativi e di contatto inseriti nel modulo (nome, cognome, ruolo, società, email, telefono facoltativo, tipologia di investitore, paese di residenza, interessi espressi), la dichiarazione relativa alla qualifica di investitore professionale, le preferenze e i consensi espressi con data, ora, lingua e versione del testo. Il sito non raccoglie dati particolari (art. 9 GDPR).</p>
     <h4>3. Finalità e basi giuridiche</h4>
-    <table>
+    <div class="tw"><table>
       <tr><th>Finalità</th><th>Base giuridica</th><th>Conferimento</th></tr>
-      <tr><td>Gestire la richiesta e organizzare il confronto con lo staff</td><td>Art. 6.1.b GDPR – misure precontrattuali adottate su richiesta dell'interessato</td><td>Necessario: in mancanza non è possibile evadere la richiesta</td></tr>
+      <tr><td>Gestire la richiesta e organizzare la call con lo staff</td><td>Art. 6.1.b GDPR – misure precontrattuali adottate su richiesta dell'interessato</td><td>Necessario: in mancanza non è possibile evadere la richiesta</td></tr>
       <tr><td>Verificare la qualifica di investitore professionale e conservarne evidenza</td><td>Art. 6.1.c (obblighi di legge in materia di comunicazioni riservate a investitori professionali) e 6.1.f (interesse legittimo a documentare il rispetto delle esenzioni normative)</td><td>Necessario</td></tr>
-      <tr><td>Ricontatto via email e telefono per proseguire il dialogo, anche su operazioni future</td><td>Art. 6.1.a – consenso, facoltativo e revocabile</td><td>Facoltativo: il mancato consenso non pregiudica la call</td></tr>
+      <tr><td>Ricontatto via email e telefono per fissare la call e proseguire il dialogo, anche su operazioni future</td><td>Art. 6.1.a – consenso, revocabile in qualsiasi momento</td><td>Necessario per fissare la call; la revoca interrompe i contatti successivi</td></tr>
+      <tr><td>Verifica della compatibilità con la normativa locale per residenti fuori dall'Italia</td><td>Art. 6.1.c e 6.1.f</td><td>Necessario per i residenti all'estero</td></tr>
       <tr><td>Difesa di un diritto in sede giudiziaria e adempimento di obblighi di legge (inclusi eventuali obblighi antiriciclaggio in caso di successiva operazione)</td><td>Art. 6.1.c e 6.1.f</td><td>—</td></tr>
-    </table>
+    </table></div>
     <p>Non è svolta alcuna attività di profilazione né processo decisionale automatizzato (art. 22 GDPR).</p>
     <h4>4. Destinatari e responsabili del trattamento</h4>
     <ul>
@@ -583,20 +635,49 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
 <dialog class="policy" id="dlgCookie">
   <div class="pol-head"><h3>Cookie Policy</h3><button type="button" onclick="closePolicy('cookie')" aria-label="Chiudi">×</button></div>
   <div class="pol-body">
-    <p>Informativa resa ai sensi dell'art. 122 del D.Lgs. 196/2003 e delle Linee guida del Garante del 10 giugno 2021. Titolare: IASON S.p.A. (recapiti nell'Informativa privacy). Versione 4.0 · Ottobre 2026.</p>
+    <p>Informativa resa ai sensi dell'art. 122 del D.Lgs. 196/2003 e delle Linee guida del Garante del 10 giugno 2021. Titolare: IASON S.p.A. (recapiti nell'Informativa privacy). Versione 5.0 · Ottobre 2026.</p>
     <h4>Cosa usiamo</h4>
-    <table>
+    <div class="tw"><table>
       <tr><th>Categoria</th><th>Strumento</th><th>Finalità</th><th>Durata</th><th>Consenso</th></tr>
       <tr><td>Tecnici</td><td>localStorage <code>ia_lang</code>, <code>ia_cookie_consent</code>, <code>ia_cookie_consent_at</code></td><td>Memorizzare la lingua scelta e le preferenze cookie espresse</td><td>Fino a cancellazione da parte dell'utente</td><td>Non richiesto</td></tr>
       <tr><td>Misurazione</td><td>[STRUMENTO ANALYTICS, es. Plausible / GA4 con IP anonimizzato]</td><td>Statistiche aggregate di utilizzo della pagina</td><td>[durata cookie dello strumento]</td><td>Richiesto</td></tr>
       <tr><td>Marketing</td><td>LinkedIn Insight Tag (LinkedIn Ireland Unlimited Company) – cookie <code>li_sugr</code> (90 gg), <code>UserMatchHistory</code> (30 gg), <code>AnalyticsSyncHistory</code> (30 gg), <code>bcookie</code> (1 anno), <code>lidc</code> (1 giorno)</td><td>Misurazione delle conversioni delle campagne LinkedIn</td><td>Come indicato</td><td>Richiesto</td></tr>
-    </table>
+    </table></div>
     <p>I cookie di misurazione e marketing <strong>non vengono installati</strong> finché non viene espresso il consenso tramite il banner. Il font del sito e le librerie sono caricati dai nostri server e non comportano comunicazioni a terzi; il servizio di invio email viene contattato solo al momento dell'invio del modulo.</p>
     <h4>Come gestire le preferenze</h4>
     <p>Puoi accettare, rifiutare o personalizzare le categorie dal banner alla prima visita e, in qualsiasi momento, dal link "Preferenze cookie" nel piè di pagina o dall'icona in basso a sinistra. Chiudere il banner con la "X" equivale a mantenere le impostazioni predefinite (solo cookie tecnici). Puoi inoltre cancellare i cookie dalle impostazioni del browser.</p>
     <h4>Terze parti</h4>
     <p>LinkedIn: <a href="https://www.linkedin.com/legal/cookie-policy" target="_blank" rel="noopener" style="color:var(--gold)">linkedin.com/legal/cookie-policy</a>. I dati raccolti da LinkedIn possono essere trasferiti negli Stati Uniti sulla base delle garanzie previste dall'art. 46 GDPR.</p>
     <p class="en-note">English: this notice is provided in Italian, which prevails. An English courtesy translation is available on request.</p>
+  </div>
+</dialog>
+
+<!-- TERMINI DI UTILIZZO -->
+<dialog class="policy" id="dlgTerms">
+  <div class="pol-head"><h3>Termini di utilizzo del sito</h3><button type="button" onclick="closePolicy('terms')" aria-label="Chiudi">×</button></div>
+  <div class="pol-body">
+    <p>Versione 5.0 · Ottobre 2026. L'accesso e l'uso di questa pagina ("Sito"), pubblicata da <strong>IASON S.p.A.</strong> (Viale Luigi Schiavonetti 278, 00173 Roma, C.F./P.IVA 18617101003), sono soggetti ai presenti termini. Se non li accetti, ti invitiamo a non utilizzare il Sito.</p>
+    <h4>1. Destinatari</h4>
+    <p>Il Sito è rivolto esclusivamente a <strong>investitori professionali</strong> ai sensi dell'Allegato II della Direttiva 2014/65/UE (MiFID II) e della normativa italiana applicabile. Accedendo, l'utente dichiara di rientrare in tale categoria e accetta che IASON S.p.A. verifichi la qualifica prima di qualsiasi accesso a documentazione riservata. Per residenti fuori dall'Italia, l'accesso a qualsiasi documentazione è subordinato alla verifica della compatibilità con la normativa locale.</p>
+    <h4>2. Natura delle informazioni</h4>
+    <p>I contenuti del Sito hanno finalità esclusivamente informativa e descrivono in termini generali l'attività di IASON S.p.A. Nulla di quanto contenuto nel Sito costituisce offerta al pubblico, sollecitazione all'investimento, raccolta di risparmio, proposta contrattuale, raccomandazione o consulenza in materia di investimenti, legale o fiscale. IASON S.p.A. non è un intermediario finanziario e non presta servizi di investimento.</p>
+    <h4>3. Manifestazioni di interesse</h4>
+    <p>L'invio del modulo costituisce una manifestazione di interesse non vincolante per entrambe le parti. Non comporta alcun obbligo di sottoscrizione né alcun diritto all'accesso a documentazione riservata. Eventuali rapporti successivi sono regolati esclusivamente da documentazione contrattuale dedicata, sottoscritta al di fuori del Sito, previa verifica dei requisiti e sottoscrizione di accordo di riservatezza.</p>
+    <h4>4. Rischi</h4>
+    <p>Le operazioni sui portafogli di crediti comportano rischi significativi, inclusi illiquidità, recuperi inferiori o più lenti del previsto, rischio normativo e fiscale e la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. L'utente è tenuto a valutare in autonomia, anche con l'ausilio di propri consulenti, qualsiasi informazione ricevuta.</p>
+    <h4>5. Riservatezza</h4>
+    <p>Le informazioni eventualmente ricevute da IASON S.p.A. dopo la registrazione sono riservate e non possono essere divulgate, riprodotte o utilizzate per finalità diverse dalla valutazione del rapporto con IASON S.p.A., salvo quanto previsto dall'accordo di riservatezza sottoscritto.</p>
+    <h4>6. Proprietà intellettuale</h4>
+    <p>Testi, grafica, marchio "IASON" e ogni altro contenuto del Sito sono di titolarità di IASON S.p.A. o dei rispettivi titolari. È vietata la riproduzione, anche parziale, senza autorizzazione scritta.</p>
+    <h4>7. Limitazione di responsabilità</h4>
+    <p>IASON S.p.A. si impegna a mantenere aggiornati i contenuti del Sito ma non garantisce la loro completezza, accuratezza o attualità e non risponde di decisioni assunte sulla base di tali contenuti. Il Sito può contenere collegamenti a siti di terzi, del cui contenuto IASON S.p.A. non è responsabile.</p>
+    <h4>8. Dati personali e cookie</h4>
+    <p>Il trattamento dei dati personali è disciplinato dall'<a href="#privacy" onclick="closePolicy('terms');openPolicy('privacy');return false" style="color:var(--gold)">Informativa privacy</a> e dalla <a href="#cookie-policy" onclick="closePolicy('terms');openPolicy('cookie');return false" style="color:var(--gold)">Cookie Policy</a>.</p>
+    <h4>9. Legge applicabile e foro</h4>
+    <p>I presenti termini sono regolati dalla legge italiana. Per ogni controversia è competente in via esclusiva il Foro di Roma, fatta salva la competenza inderogabile prevista dalla legge.</p>
+    <h4>10. Modifiche</h4>
+    <p>IASON S.p.A. può modificare i presenti termini in qualsiasi momento; la versione vigente è pubblicata sul Sito con indicazione della data.</p>
+    <p class="en-note">English: these terms are provided in Italian, which prevails. An English courtesy translation is available on request at info@iason.com.</p>
   </div>
 </dialog>
 
@@ -630,82 +711,92 @@ const CONFIG={
   CONTACT_EMAIL:'info@iason.com',
   EMAILJS_PUBLIC_KEY:'YOUR_PUBLIC_KEY_HERE',
   EMAILJS_SERVICE_ID:'YOUR_SERVICE_ID_HERE',
-  TEMPLATE_NOTIFY:'YOUR_NOTIFY_TEMPLATE_ID_HERE',
-  TEMPLATE_AUTOREPLY:'YOUR_AUTOREPLY_TEMPLATE_ID_HERE',   // conferma + link calendario
+  TEMPLATE_NOTIFY:'YOUR_NOTIFY_TEMPLATE_ID_HERE',       // notifica interna allo staff
+  TEMPLATE_AUTOREPLY:'YOUR_AUTOREPLY_TEMPLATE_ID_HERE', // conferma + link calendario (solo residenti IT)
+  TEMPLATE_MANUAL:'YOUR_MANUAL_TEMPLATE_ID_HERE',       // conferma "verifica manuale" (residenti esteri), senza link
   CALENDAR_URL:'[URL_CALENDARIO]',
   LINKEDIN_PARTNER_ID:'[LINKEDIN_PARTNER_ID]',
-  ANALYTICS_SRC:'',                        // es. 'https://plausible.io/js/script.js' — caricato solo con consenso
-  CONSENT_TEXT_VERSION:'v4.0-2026-10'      // aggiornare ogni volta che cambia il testo di consensi/informativa
+  ANALYTICS_SRC:'',                        // caricato solo con consenso
+  CONSENT_TEXT_VERSION:'v5.0-2026-10'
 };
-const PAGE_SOURCE='Sito IASON · richiesta di contatto';
+const PAGE_SOURCE='Landing IASON · co-investimento crediti';
+const AUTO_COUNTRIES=['IT']; // tutti gli altri → verifica manuale
 
-// ============================================================
-// I18N — IT default. EN solo su scelta manuale
-// ============================================================
 const I18N={
 it:{
   'ck.save':'Salva le preferenze',
-  'err.send':"Si è verificato un errore nell'invio. Riprova o scrivici a info@iason.com.",'err.consent':"Per procedere è necessario dichiarare la qualifica di investitore professionale e confermare la lettura dell'informativa.",'sending':'Invio in corso...'
+  'err.send':"Si è verificato un errore nell'invio. Riprova o scrivici a info@iason.com.",
+  'err.consent':"Per procedere è necessario dichiarare la qualifica di investitore professionale e acconsentire al ricontatto.",
+  'err.company':"Per family office e investitori istituzionali indica società ed ente di appartenenza e ruolo.",
+  'sending':'Invio in corso...'
 },
 en:{
-  'meta.title':'IASON S.p.A. · Credit portfolios: purchase, management, recovery',
-  'mc.label':'Communication addressed to professional investors · Not a public offer',
-  'nav.1':'About us','nav.2':'How we work','nav.3':'The asset class','nav.4':'FAQ',
-  'cta.nav':'Book a conversation','cta.main':'Book an introductory conversation','cta.why':'How we work','cta.form':'Book an introductory conversation',
+  'meta.title':'Co-investment in credit portfolios · IASON S.p.A.',
+  'mc.label':'For professional investors only · Not a public offer',
+  'nav.1':'The initiative','nav.2':'The opportunity','nav.3':'How it works','nav.4':'FAQ',
+  'cta.nav':'Book a call','cta.main':'Book a call with our staff','cta.why':'See the opportunity','cta.sub':'No commitment. Thirty minutes with the people running the deal.','cta.form':'Book a call with our staff',
   'hero.h1':'Billions move through bank credit every year. <em>Now you can invest in it too.</em>',
-  'hero.sub':'IASON S.p.A. buys portfolios of banking, utility, telco and retail credit with <strong>its own capital</strong> and manages recovery in-house under its <strong>Art. 115 TULPS licence</strong>. On individual transactions it considers the participation of a small number of professional investors.',
-  'hero.note':'Communication addressed to professional investors. Not a public offer nor a solicitation to invest.',
-  's1.eyebrow':'01 · About us','s1.title':'An operator that buys on its own account. <strong>And works in-house.</strong>',
-  's1.lead':'When a loan stops being repaid, it becomes a burden on the lender\'s balance sheet. For those who know how to manage it, it becomes a <strong>stream of future collections</strong>, bought <strong>below face value</strong>. IASON buys these portfolios and runs their recovery <strong>itself</strong>.',
-  's1.st1h':'What we buy','s1.st1p':'Portfolios of <strong>banking, utility, telco and retail</strong> credit: <strong>thousands of small positions</strong>, sold periodically by those who originated them.',
-  's1.st2h':'How we buy','s1.st2p':'We select, price and <strong>buy portfolios on our own account</strong>. <strong>Not an intermediary</strong>: the seller\'s counterparty is always the same.',
-  's1.st3h':'How we manage','s1.st3p':'Recovery is <strong>run directly by IASON</strong> under its <strong>Art. 115 TULPS licence</strong>. The buyer of the portfolio is the one working it: <strong>every position tracked</strong>, every collection reconciled and reported on a regular basis.',
+  'hero.sub':'Big capital has been buying credit from banks for years. IASON S.p.A. opens that door to a <strong>small circle of professional investors</strong>: you come in alongside a buyer investing its own capital, in an <strong>asset class listed markets do not replicate</strong>.',
+  'hero.note':'Few counterparts per portfolio. Page reserved for professional investors, not a public offer. <strong>Illiquid transaction, capital at risk</strong>: structure and terms only in the dossier, after NDA.',
+  's1.eyebrow':'01 · The initiative','s1.title':'A market that regenerates every quarter. <strong>And an operator that buys on its own account.</strong>',
+  's1.lead':'When a loan stops being repaid, it becomes a burden on the lender\'s balance sheet. For those who know how to manage it, it becomes a <strong>stream of future collections</strong>, bought today <strong>below face value</strong>. IASON buys these portfolios with its own capital and follows recovery <strong>itself</strong>.',
+  's1.st1h':'What is bought','s1.st1p':'Portfolios of <strong>banking, utility, telco and retail</strong> credit: <strong>thousands of small positions</strong>, sold periodically by those who originated them.',
+  's1.st2h':'Who buys','s1.st2p':'IASON S.p.A., an operating company that selects, prices and <strong>buys portfolios on its own account</strong>. <strong>Not an intermediary</strong>: the counterparty of sellers and co-investors is always the same.',
+  's1.st3h':'How it is managed','s1.st3p':'Recovery is <strong>run directly by IASON</strong>, holder of an <strong>Art. 115 TULPS licence</strong>; non-performing loans are serviced by <strong>[SERVICER NAME]</strong>, registered under Art. 114.6 of the Italian Banking Act. <strong>Every position tracked</strong>, every collection reconciled and reported on a regular basis.',
   's1.st4h':'How it pays','s1.st4p':'Collections accrue <strong>progressively</strong> along the recovery cycle: many positions are settled through <strong>negotiated repayment plans</strong>, long before court timelines.',
   'lic.k':'Art. 115 TULPS licence','lic.h':'We buy the portfolio. <em>And we work it ourselves.</em>','lic.p':'IASON holds the public-security licence for debt collection (Art. 115 R.D. 773/1931). Recovery is <strong>not outsourced</strong>: the same company that selects and prices the lot follows every position, from the first reminder to the last payment. <strong>One counterparty, one responsible party</strong>, no margin lost along the chain.',
-  's2.eyebrow':'02 · How we work','s2.title':'From tape to collection, <strong>in four stages.</strong>','s2.lead':'A disciplined, tracked process, the same for every portfolio.',
-  'f1h':'Selection','f1p':'We analyse portfolios for sale: <strong>vintage, documentation</strong>, borrower type, <strong>payment history</strong>.','f1t':'Due diligence <strong>on the tape</strong>',
-  'f2h':'Pricing','f2p':'We price on the <strong>minimum expected recovery</strong>, not the average. The purchase price is the <strong>first safeguard of the outcome</strong>.','f2t':'<strong>Prudent</strong> model',
-  'f3h':'Purchase','f3p':'We buy with <strong>our own capital</strong>. IASON is the <strong>seller\'s direct counterparty</strong>, with no intermediaries.','f3t':'<strong>Own</strong> capital',
-  'f4h':'Recovery and reporting','f4p':'We work every position <strong>in-house</strong> under our Art. 115 licence. Collections <strong>reconciled and reported</strong> on a regular basis.','f4t':'<strong>Art. 115</strong> licence',
-  's3.eyebrow':'03 · The asset class','s3.title':'Why credit is <em>an asset class of its own.</em>','s3.lead':'This is no passing cycle: European rules <strong>consistently</strong> push banks to sell what stops performing. Four <strong>structural features</strong> of the market we operate in.',
-  'd1h':'Value comes from the purchase price','d1p':'You buy <strong>a fraction of face value</strong> and collect what you recover. The outcome depends on pricing and management discipline, <strong>not on a stock index</strong>. That is why our model prices on the <strong>minimum expected recovery</strong>, not the average.',
-  'd2h':'Cash flows independent of listed markets','d2p':'Collections come from repayment plans and recoveries across thousands of positions. <strong>They do not follow rates, spreads or sentiment</strong>: they follow the recovery work.',
-  'd3h':'Granular by construction','d3p':'<strong>Thousands of borrowers</strong>, small amounts, different regions. <strong>No single position</strong> can compromise the portfolio\'s result: risk is <strong>spread by construction</strong>.',
-  'd4h':'Own capital in every lot','d4p':'IASON puts <strong>its own capital</strong> into every portfolio it buys. Selecting, paying and recovering are done by the same company: <strong>aligned interests</strong> along the whole chain.',
-  's4.eyebrow':'04 · Contact','s4.title':'Want to get to know IASON? <strong>Thirty minutes</strong> <em>with our staff.</em>',
-  'as.k':'What happens on the call','as.h':'An introductory conversation, <em>not a pitch.</em>','as.p':'No sales deck. Thirty minutes with <strong>the people who select and work portfolios</strong>, to get to know each other and answer your questions.',
-  'ag1h':'Who we are','ag1p':'History, team, <strong>Art. 115 licence</strong>, what we buy and why.','ag2h':'How we work a portfolio','ag2p':'Selection, <strong>prudent pricing</strong>, <strong>in-house recovery</strong>, reporting.','ag3h':'Your questions','ag3p':'Market, process, governance: we answer whatever you want to know.',
+  's2.eyebrow':'02 · The opportunity','s2.title':'Why this deal deserves <em>a thirty-minute call.</em>',
+  's2.lead':'This is no passing cycle: European rules <strong>consistently</strong> push banks to sell what stops performing, and those who know how to buy have a <strong>structural edge</strong>.',
+  's2.w.eyebrow':'Let\'s be clear','s2.w.p1':'The investment is <strong>illiquid</strong> for the length of the recovery cycle, collections may be <strong>lower or slower than expected</strong> and the quality of management is decisive. <strong>We do not sell certainties</strong>: we share figures, historical data and structure with those qualified to assess them.','s2.w.p2':'That is why structure and terms are not on this page: you will find them in the reserved dossier, after the NDA, and we discuss them live with our staff.',
+  's2.d1h':'Value comes from the entry price','s2.d1p':'You buy <strong>a fraction of face value</strong> and collect what you recover. The outcome depends on pricing and management discipline, <strong>not on a stock index</strong>. That is why our model prices on the <strong>minimum expected recovery</strong>, not the average.',
+  's2.d2h':'Uncorrelated with equities and bonds','s2.d2p':'Collections depend on <strong>repayment plans and recoveries</strong>, not on the movement of a listed index: a source of cash flows <strong>with its own logic</strong>.',
+  's2.d3h':'Granular by construction','s2.d3p':'<strong>Thousands of small positions</strong>, different regions: the structure of the portfolio <strong>reduces dependence on any single borrower</strong>.',
+  's2.d4h':'Invest alongside the buyer','s2.d4p':'IASON puts <strong>its own capital</strong> in the lot and invites a few co-investors on the single portfolio, with a <strong>direct relationship</strong> and no layers of intermediation. <strong>Aligned interests</strong>, a transparent deal, <strong>a full dossier</strong> before any decision.',
+  's3.eyebrow':'03 · How it works','s3.title':'From registration to dossier, <strong>in four steps.</strong>','s3.lead':'A confidential, tracked process. No material circulates before eligibility is verified and the non-disclosure agreement is signed.',
+  'f1h':'Registration','f1p':'Fill in the form in two minutes and pick the date and time of your call right away.','f1t':'Time: <strong>2 minutes</strong>',
+  'f2h':'Call with our staff','f2p':'We walk you through the deal, answer your questions and verify your professional-investor status.','f2t':'Time: <strong>30 minutes</strong>',
+  'f3h':'Mutual NDA','f3p':'We both sign a non-disclosure agreement. It protects you and it protects us.','f3t':'<strong>Mutual</strong> confidentiality',
+  'f4h':'Reserved dossier','f4p':'You receive the full dossier on a private, tracked channel: structure, data, terms. Then you decide.','f4t':'<strong>Private</strong> channel',
+  's4.eyebrow':'04 · Who it is for','s4.title':'Few seats, <em>selected counterparts.</em>','s4.lead':'Co-investment on a single portfolio is reserved for professional investors able to assess the structure and risks of the deal independently.',
+  't1h':'Family offices','t1p':'Looking for <strong>real, uncorrelated cash flows</strong> and a direct relationship with those managing the capital.','t2h':'Institutional investors','t2p':'Seeking access to a <strong>private credit</strong> asset class with clear governance and reporting.','t3h':'Private professional investors','t3p':'Meeting the legal requirements and looking for <strong>direct transactions</strong>, with no layers of intermediation.',
+  's5.eyebrow':'05 · Registration','s5.title':'Two minutes to register. <strong>Thirty minutes</strong> <em>with the people running the deal.</em>',
+  'as.k':'What happens on the call','as.h':'A direct conversation, <em>not a pitch.</em>','as.p':'No sales deck. Thirty minutes with <strong>the people who select and work portfolios</strong>, to find out whether the deal is right for you.',
+  'ag1h':'Your goals','ag1p':'Horizon, ticket size, what you look for in an uncorrelated investment.','ag2h':'How a sale works','ag2p':'Who sells, who buys, where value comes from and who makes money.','ag3h':'How we read a portfolio','ag3p':'Vintage, documentation, recoverability, the collection cycle month by month.','ag4h':'Risks, governance and next steps','ag4p':'Art. 115 licence, Art. 114.6 servicer, protections for the co-investor, eligibility check.',
   'af1':'Video or phone, whenever suits you','af2b':'With the people who work the portfolios','af2':'You talk to those who select and recover, not to a salesperson','af3b':'No commitment','af3':'Nothing to subscribe, nothing to sign',
-  's4.h':'Book an <strong>introductory conversation.</strong>','s4.p':'Fill in the form and pick a date and time right away. No subscription, no commitment.',
-  'ph.first':'First name *','ph.last':'Last name *','ph.role':'Role *','ph.company':'Company *','ph.email':'Email *','ph.phone':'Phone',
+  's5.h':'Talk to <strong>our staff.</strong>','s5.p':'Fill in the form and pick the date and time of your call right away. No subscription, no commitment.',
+  'ph.first':'First name *','ph.last':'Last name *','ph.email':'Email *','ph.phone':'Phone','ph.company':'Company / organisation','ph.role':'Role',
   'opt.type':'Investor type *','opt.inst':'Institutional investor','opt.priv':'Private professional investor',
-  'int.l':'I am interested in *','int.1':'Learning about IASON\'s activity','int.2':'Being informed about upcoming transactions','int.3':'A first conversation',
-  's4.pro':'* I declare that I am a professional investor under Annex II of Directive 2014/65/EU (MiFID II) and that I understand this communication is not a public offer nor a solicitation to invest.',
-  's4.c1':'* I have read the <a href="#privacy" onclick="openPolicy(\'privacy\');return false">Privacy Notice</a>. Data is processed by IASON S.p.A. to arrange the requested conversation (legal basis: pre-contractual steps at the data subject\'s request).',
-  's4.c2':'I consent to being contacted by IASON S.p.A. by email and, if provided, phone to continue the conversation and receive information on the company\'s activity (optional; may be withdrawn at any time).',
-  'req':'* Required field',
-  'ok.h':'Request received. <em>Now pick a time to talk.</em>','ok.p':'A confirmation is on its way to your inbox. Choose a date and time in one click: thirty minutes, no commitment.','ok.btn':'Choose date and time',
-  'ok.1':'<strong>On the call:</strong> we get to know each other and answer your questions','ok.2':'<strong>Afterwards:</strong> any further relationship with professional investors is assessed individually, outside this website',
-  's5.eyebrow':'05 · Frequently asked questions','s5.title':'What we get asked <em>before the call.</em>',
-  'q1':'Who is IASON?','a1':'<strong>IASON S.p.A.</strong> is an Italian company based in Rome, registered with the Rome Companies Register (tax code 18617101003), that buys credit portfolios with <strong>its own capital</strong> and runs their <strong>recovery directly</strong> under its Art. 115 TULPS licence.',
-  'q2':'Is this an investment offer?','a2':'No. IASON does not offer products to the public and <strong>does not provide investment, placement or advisory services</strong>. This page presents the company\'s activity and collects contact requests from professional investors. Any relationship with professional investors is assessed individually and governed by dedicated documentation, outside this website.',
-  'q3':'Why are there no figures on the page?','a3':'IASON does not publish data on individual transactions. Prices, structure and historical data are <strong>reserved</strong> and are not communicated through this website.',
-  'q4':'What happens after I book?','a4':'You immediately receive a confirmation and the link to choose a date and time. On the call we get to know each other, explain how we work and answer your questions. Nothing is proposed or subscribed.',
-  'q5':'How is my data handled?','a5':'IASON S.p.A. is the data controller. Your data is used to arrange the conversation and, only if you consented, to contact you. It is not sold to third parties; technical providers (email, hosting, scheduling) act as processors. Details in the <a href="#privacy" onclick="openPolicy(\'privacy\');return false" style="color:var(--gold);text-decoration:underline">Privacy Notice</a>.',
-  'q6':'What are the risks of the activity?','a6':'Buying and recovering credit carries significant risks: recovery lower or slower than expected, illiquidity for the length of the cycle, dependence on the quality of management, regulatory and tax risk, <strong>possible loss of the capital employed</strong>. We discuss them openly on the call.',
-  'band.h':'Want to get to know IASON? <em>Let\'s talk.</em>','band.p':'Thirty minutes with our staff to understand <strong>who we are</strong> and <strong>how we work portfolios</strong>.',
-  'foot.brand':'Company specialised in buying credit portfolios with its own capital and recovering them under an Art. 115 TULPS licence. Open to partnerships with professional investors on individual transactions.',
+  'opt.country':'Country of residence *','c.IT':'Italy','c.CH':'Switzerland','c.LU':'Luxembourg','c.DE':'Germany','c.FR':'France','c.GB':'United Kingdom','c.OTHER':'Other',
+  'int.l':'I am interested in *','int.1':'Co-investing in this portfolio','int.2':'Being informed about upcoming deals','int.3':'For now, a first conversation',
+  'juris':'For residents outside Italy the request is <strong>reviewed manually</strong> by our staff before anything is sent: you will not receive an automatic booking link, we will contact you after verifying compatibility with local law.',
+  's5.pro':'* I declare that I qualify as a professional investor (Annex II, Directive 2014/65/EU) and I understand that my status will be verified before access to any documentation.',
+  's5.c2':'* I consent to being contacted by IASON S.p.A. by email and, if provided, phone to schedule the call and continue the conversation. I can withdraw consent at any time.',
+  's5.c1':'I have read the <a href="#privacy" onclick="openPolicy(\'privacy\');return false">Privacy Policy</a> and the <a href="#terms" onclick="openPolicy(\'terms\');return false">Terms of use</a>. Data is processed by IASON S.p.A. to handle my request (legal basis: pre-contractual steps at the data subject\'s request).',
+  'req':'* Required field · Company and role required for family offices and institutional investors',
+  's5.note':'For residents outside Italy, access to the dossier is subject to verification of local law.',
+  'ok.h':'Registration received. <em>Now pick a time to talk.</em>','ok.p':'A confirmation is on its way to your inbox. Choose the date and time of your call in one click: thirty minutes, no commitment.','ok.btn':'Choose date and time of the call',
+  'ok.1':'<strong>On the call:</strong> we meet, verify eligibility and walk you through the deal','ok.2':'<strong>Mutual NDA:</strong> we sign the non-disclosure agreement','ok.3':'<strong>Reserved dossier:</strong> structure, data and terms on a private channel',
+  'okm.h':'Request received. <em>We will contact you.</em>','okm.p':'For residents outside Italy we first verify compatibility with local law. You will hear from our staff within a few working days; no material is sent before that check.',
+  's6.eyebrow':'06 · Frequently asked questions','s6.title':'What we get asked <em>before the call.</em>',
+  'q1':'Who is IASON?','a1':'<strong>IASON S.p.A.</strong> is an Italian company based in Rome, registered with the Rome Companies Register (tax code 18617101003), that buys credit portfolios with <strong>its own capital</strong> and holds an Art. 115 TULPS licence. Servicing of non-performing loans is entrusted to <strong>[SERVICER NAME]</strong>, a servicer registered under Art. 114.6 of the Italian Banking Act. It is the direct counterparty of sellers and co-investors.',
+  'q2':'Is this an investment offer?','a2':'No. This page collects expressions of interest from professional investors. <strong>It is not a public offer</strong>, it does not ask for money and contains no contractual proposal. Any co-investment takes place privately, on an individual basis, after eligibility checks and with dedicated contractual documentation.',
+  'q3':'Why are there no figures on the page?','a3':'Because a serious deal is assessed on a full dossier, not a headline. Prices, structure and historical data are <strong>reserved</strong> and shared only after the mutual non-disclosure agreement is signed, on a private, tracked channel.',
+  'q4':'What happens after I register?','a4':'You immediately receive a confirmation and the link to choose a date and time. On the call we verify your professional-investor status and walk you through the deal. If there is interest on both sides, we sign the <strong>mutual NDA</strong> and you receive the dossier. No material before that.',
+  'q5':'How is my data handled?','a5':'IASON S.p.A. is the data controller. Your data is used to arrange the call, verify eligibility and, with your consent, contact you. It is not sold to third parties; technical providers (email, hosting, scheduling) act as processors. Details in the <a href="#privacy" onclick="openPolicy(\'privacy\');return false" style="color:var(--gold);text-decoration:underline">Privacy Notice</a>.',
+  'q6':'What are the risks?','a6':'Recovery lower or slower than expected, illiquidity for the length of the cycle, dependence on the quality of management, regulatory and tax risk, <strong>possible loss of capital</strong>. We describe them in detail in the dossier and discuss them openly on the call.',
+  'band.h':'The next portfolio <em>is under review.</em>','band.p':'Book thirty minutes with the IASON staff. You will understand <strong>how the deal is structured</strong> and <strong>what it involves</strong>.',
+  'foot.brand':'Company specialised in buying and managing credit portfolios on its own account, with co-investment reserved for professional investors.',
   'foot.legal':'Legal information','foot.sede':'Registered office: Viale Luigi Schiavonetti 278, 00173 Rome (RM), Italy','foot.ri':'Rome Companies Register, tax code and registration no. 18617101003 · VAT IT18617101003','foot.rea':'REA RM-1795823 · Share capital € 65,000.00',
-  'foot.links':'Links','foot.ckpref':'Cookie preferences','foot.disc':'Legal notice',
-  'foot.d0':'<strong>IASON S.p.A. is not a financial intermediary and does not provide investment, placement or advisory services.</strong> The company purchases and recovers credit under the licence set out in Art. 115 R.D. 773/1931.',
-  'foot.d1':'<strong>Communication addressed to professional investors.</strong> This page is published by IASON S.p.A. and is addressed exclusively to professional investors under Annex II of Directive 2014/65/EU (MiFID II) and applicable Italian law, resident in Italy. It describes the company\'s activity in general terms and collects non-binding contact requests.',
-  'foot.d2':'Nothing on this page constitutes a public offer, solicitation to invest, deposit-taking, recommendation or investment, legal or tax advice. No contractual proposal is made through this page. Any relationship with professional investors is assessed individually, outside this website, after eligibility checks and within the exemptions provided by law.',
-  'foot.d3':'Buying and recovering credit carries significant risks, including the possible total loss of the capital employed. Past results do not predict future ones. This communication is not directed at persons resident outside Italy; access is not permitted where the distribution of this information would not comply with local law. Data controller: IASON S.p.A.',
-  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v4.3 · October 2026',
+  'foot.links':'Links','foot.terms':'Terms of use','foot.terms2':'Terms','foot.ckpref':'Cookie preferences','foot.disc':'Legal notice',
+  'foot.d1':'<strong>Communication reserved for professional investors.</strong> This page is published by IASON S.p.A. and is addressed exclusively to professional investors under Annex II of Directive 2014/65/EU (MiFID II) and applicable Italian law. It describes in general terms an activity of purchasing and managing credit portfolios and collects non-binding expressions of interest. Professional-investor status is verified by IASON S.p.A. before access to any documentation.',
+  'foot.d2':'Nothing on this page constitutes a public offer, solicitation to invest, deposit-taking, recommendation or investment, legal or tax advice. No contractual proposal is made through this page. Any co-investment takes place through <strong>[pro-rata assignment / instruments issued by a vehicle under Law 130/99]</strong>, on a bilateral basis, with dedicated documentation and after eligibility checks, within the exemptions provided by law.',
+  'foot.d4':'Servicing of non-performing loans is entrusted to <strong>[SERVICER NAME]</strong>, a servicer registered under Art. 114.6 of Legislative Decree 385/1993. IASON S.p.A. holds a licence under Art. 115 R.D. 773/1931 and is not a financial intermediary under Art. 106 of Legislative Decree 385/1993.',
+  'foot.d3':'Transactions in credit portfolios carry significant risks, including the possible total loss of the capital employed. Past results do not predict future ones. For residents outside Italy, access to the dossier is subject to verification of local law; access is not permitted where the distribution of this information would not comply with local law. Data controller: IASON S.p.A.',
+  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v5.1 · October 2026',
   'ck.h':'Cookies and privacy','ck.sub':'No forced acceptance','ck.p':'We use <strong>technical cookies</strong>, always active and necessary for the site to work. <strong>Analytics</strong> and <strong>marketing</strong> cookies are only set with your consent. Data controller: <strong>IASON S.p.A.</strong>',
   'ck.tech':'Technical<small>Always active: required for the site to work</small>','ck.ana':'Analytics<small>Aggregate usage statistics</small>','ck.mkt':'Marketing<small>LinkedIn Insight Tag – campaign measurement</small>',
   'ck.reject':'Reject all','ck.custom':'Customise','ck.save':'Save preferences','ck.accept':'Accept all',
-  'err.send':'An error occurred while sending. Please try again or write to info@iason.com.','err.consent':'To proceed you must declare your professional-investor status and confirm you have read the privacy notice.','sending':'Sending...'
+  'err.send':'An error occurred while sending. Please try again or write to info@iason.com.','err.consent':'To proceed you must declare your professional-investor status and consent to being contacted.','err.company':'For family offices and institutional investors, please indicate company and role.','sending':'Sending...'
 }};
 const IT_CACHE={};
 let LANG='it';
@@ -720,18 +811,38 @@ function applyLang(){
   document.getElementById('langIt').classList.toggle('active',LANG==='it');
   document.getElementById('langEn').classList.toggle('active',LANG==='en');
   if(document.getElementById('cookiePrefs').classList.contains('visible')) document.getElementById('ckCustomBtn').innerHTML=t('ck.save');
+  onType(document.getElementById('f_type').value);
 }
 function setLang(l){ LANG=l; try{localStorage.setItem('ia_lang',l);}catch(_){ } applyLang(); }
+
+// Società/ruolo obbligatori per family office e istituzionali
+function onType(v){
+  const need=(v==='family-office'||v==='istituzionale');
+  ['f_company','f_role'].forEach(id=>{ document.getElementById(id).required=need; });
+  const lc=document.getElementById('l_company'), lr=document.getElementById('l_role');
+  const base=(k)=> LANG==='it'?IT_CACHE[k]:(I18N.en[k]||IT_CACHE[k]);
+  if(lc&&IT_CACHE['ph.company']) lc.innerHTML=base('ph.company')+(need?' *':'');
+  if(lr&&IT_CACHE['ph.role']) lr.innerHTML=base('ph.role')+(need?' *':'');
+}
+// Paese: residenti esteri → verifica manuale
+function onCountry(v){ document.getElementById('jurisNote').classList.toggle('visible',!!v&&AUTO_COUNTRIES.indexOf(v)<0); }
+
+// Policy dialogs
+const DLG={privacy:'dlgPrivacy',cookie:'dlgCookie',terms:'dlgTerms'};
+function openPolicy(w){ const d=document.getElementById(DLG[w]); if(!d) return; if(!d.open){ d.showModal(); document.body.classList.add('modal-open'); d.querySelector('.pol-body').scrollTop=0; } }
+function closePolicy(w){ const d=document.getElementById(DLG[w]); if(d&&d.open) d.close(); if(!document.querySelector('dialog.policy[open]')) document.body.classList.remove('modal-open'); }
+document.querySelectorAll('dialog.policy').forEach(d=>{
+  d.addEventListener('close',()=>{ if(!document.querySelector('dialog.policy[open]')) document.body.classList.remove('modal-open'); });
+  d.addEventListener('click',e=>{ if(e.target===d) d.close(); }); // click sul backdrop
+});
+
 (function(){
   let saved=null; try{ saved=localStorage.getItem('ia_lang'); }catch(_){ }
   LANG=(saved==='en')?'en':'it';
   applyLang();
   document.getElementById('calBtn').href=CONFIG.CALENDAR_URL;
+  if(location.hash==='#privacy') openPolicy('privacy'); else if(location.hash==='#cookie-policy') openPolicy('cookie'); else if(location.hash==='#terms') openPolicy('terms');
 })();
-
-function openPolicy(w){ const d=document.getElementById(w==='privacy'?'dlgPrivacy':'dlgCookie'); if(d&&!d.open) d.showModal(); }
-function closePolicy(w){ const d=document.getElementById(w==='privacy'?'dlgPrivacy':'dlgCookie'); if(d&&d.open) d.close(); }
-if(location.hash==='#privacy') openPolicy('privacy'); if(location.hash==='#cookie-policy') openPolicy('cookie');
 
 function loadEmailJS(){
   return new Promise((res,rej)=>{
@@ -748,24 +859,32 @@ function submitLead(e){
   const f=e.target, btn=document.getElementById('leadBtn'), fd=new FormData(f), d=Object.fromEntries(fd.entries());
   if(d.website){ return; }
   if(!f.reportValidity()) return;
-  if(!fd.get('professional')||!fd.get('privacy_ack')){ alert(t('err.consent')); return; }
+  if(!fd.get('professional')||!fd.get('consent_contact')){ alert(t('err.consent')); return; }
+  const needCo=(d.type==='family-office'||d.type==='istituzionale');
+  if(needCo&&(!d.company||!d.role)){ alert(t('err.company')); return; }
+  const manual=AUTO_COUNTRIES.indexOf(d.country)<0;
   btn.disabled=true; btn.textContent=t('sending');
   const p={
     to_email:CONFIG.CONTACT_EMAIL,
     user_firstname:d.firstname,user_lastname:d.lastname,user_name:(d.firstname+' '+d.lastname).trim(),
-    user_role:d.role,user_company:d.company,user_email:d.email,user_phone:d.phone||'-',
-    user_type:d.type,user_interest:d.interest,
+    user_role:d.role||'-',user_company:d.company||'-',user_email:d.email,user_phone:d.phone||'-',
+    user_type:d.type,user_country:d.country,user_interest:d.interest,
+    manual_review: manual?'yes':'no',
     professional_declared: fd.get('professional')?'yes':'no',
     privacy_ack: fd.get('privacy_ack')?'yes':'no',
     consent_contact: fd.get('consent_contact')?'yes':'no',
     consent_text_version: CONFIG.CONSENT_TEXT_VERSION,
     consent_lang: LANG,
     submitted_at_iso: new Date().toISOString(),
-    calendar_url:CONFIG.CALENDAR_URL,
+    calendar_url: manual?'':CONFIG.CALENDAR_URL,   // nessun link automatico per residenti esteri
     source:PAGE_SOURCE
   };
-  loadEmailJS().then(()=>sendMail(CONFIG.TEMPLATE_NOTIFY,p)).then(()=>sendMail(CONFIG.TEMPLATE_AUTOREPLY,p))
-  .then(()=>{ f.style.display='none'; const box=document.getElementById('leadSuccess'); box.classList.add('visible'); box.scrollIntoView({behavior:'smooth',block:'center'}); })
+  loadEmailJS().then(()=>sendMail(CONFIG.TEMPLATE_NOTIFY,p))
+  .then(()=>sendMail(manual?CONFIG.TEMPLATE_MANUAL:CONFIG.TEMPLATE_AUTOREPLY,p))
+  .then(()=>{
+    f.style.display='none'; document.querySelector('#registrazione .form-note').style.display='none';
+    const box=document.getElementById(manual?'leadSuccessManual':'leadSuccess'); box.classList.add('visible'); box.scrollIntoView({behavior:'smooth',block:'center'});
+  })
   .catch(err=>{ console.error(err); btn.disabled=false; btn.innerHTML=t('cta.form'); alert(t('err.send')); });
 }
 
