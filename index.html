@@ -222,11 +222,11 @@ dialog.policy::backdrop{background:rgba(0,8,30,.75);backdrop-filter:blur(4px)}
 .pol-body code{font-size:11.5px;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
 .pol-body th{color:var(--gold);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 .pol-body .en-note{font-size:11.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
-.risk{margin:26px 0 8px;padding:22px 24px;border-left:3px solid var(--gold);background:var(--navy-card);border-radius:0 var(--r-md) var(--r-md) 0;max-width:860px}
-.risk .eyebrow{margin-bottom:10px}
-.risk p{font-size:14.5px;color:var(--muted-strong);line-height:1.7;font-weight:300;margin-bottom:8px}
-.risk p:last-child{margin-bottom:0}
-.risk strong{color:var(--white);font-weight:600}
+.risk-small{margin-top:22px;padding:16px 18px;border-left:2px solid rgba(216,176,87,.6);background:rgba(255,255,255,.03);border-radius:0 var(--r-sm) var(--r-sm) 0;max-width:760px}
+.risk-small .rs-k{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.risk-small p{font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;margin-bottom:5px}
+.risk-small p:last-child{margin-bottom:0}
+.risk-small strong{color:var(--muted-strong);font-weight:500}
 .target{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 @media(max-width:760px){.target{grid-template-columns:1fr;gap:12px}}
 .tg{border:1px solid var(--line);border-radius:var(--r-md);padding:26px 24px;background:var(--navy-card)}
@@ -384,11 +384,6 @@ body.modal-open{overflow:hidden}
     <div class="eyebrow" data-i18n="s2.eyebrow">02 · L'opportunità</div>
     <h2 class="title" data-i18n="s2.title">Perché questa operazione merita <em>una call di trenta minuti.</em></h2>
     <p class="lead" data-i18n="s2.lead">Non è un ciclo passeggero: le regole europee spingono <strong>stabilmente</strong> le banche a cedere ciò che non performa, e chi sa comprare ha un <strong>vantaggio strutturale</strong>.</p>
-    <div class="risk">
-      <div class="eyebrow" data-i18n="s2.w.eyebrow">Parliamone chiaramente</div>
-      <p data-i18n="s2.w.p1">L'investimento è <strong>illiquido</strong> per la durata del ciclo di recupero, gli incassi possono essere <strong>inferiori o più lenti del previsto</strong> e la qualità della gestione è decisiva. <strong>Non vendiamo certezze</strong>: condividiamo numeri, dati storici e struttura con chi ha le competenze per valutarli.</p>
-      <p data-i18n="s2.w.p2">Per questo struttura e termini non sono su questa pagina: li trovi nel dossier riservato, dopo l'NDA, e li discutiamo dal vivo con il nostro staff.</p>
-    </div>
     <div class="drivers">
       <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M12 11l4 4"/></svg></div><h4 data-i18n="s2.d1h">Il valore nasce dal prezzo d'ingresso</h4><p data-i18n="s2.d1p">Si compra <strong>una frazione del valore nominale</strong> e si incassa ciò che si recupera. Il risultato dipende dalla disciplina con cui si prezza e si gestisce, <strong>non da un indice di borsa</strong>. È per questo che il nostro modello prezza sul <strong>recupero minimo atteso</strong>, non sulla media.</p></div>
       <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c3-1 5-6 8-6s5 4 10 1" opacity=".45"/><path d="M3 9h3l2 4 3-8 3 6 2-2h5"/></svg></div><h4 data-i18n="s2.d2h">Decorrelato da azioni e obbligazioni</h4><p data-i18n="s2.d2p">Gli incassi dipendono da <strong>piani di rientro e recuperi</strong>, non dall'andamento di un listino: una fonte di flussi <strong>con logiche proprie</strong>.</p></div>
@@ -396,6 +391,11 @@ body.modal-open{overflow:hidden}
       <div class="drv"><div class="drv-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-3 4 4 5-5 3 3"/><path d="M3 12v8h18v-8"/><path d="M8 20v-4M12 20v-6M16 20v-5"/></svg></div><h4 data-i18n="s2.d4h">Investi accanto a chi compra</h4><p data-i18n="s2.d4p">IASON mette <strong>capitale proprio</strong> nel lotto e invita pochi co-investitori sul singolo portafoglio, con un <strong>rapporto diretto</strong> e senza strati di intermediazione. <strong>Interessi allineati</strong>, operazione trasparente, <strong>dossier completo</strong> prima di ogni decisione.</p></div>
     </div>
     <div class="cta-row"><a href="#registrazione" class="btn" data-i18n="cta.main">Prenota la call con lo staff</a><span data-i18n="cta.sub">Nessun impegno. Trenta minuti con chi segue l'operazione.</span></div>
+    <div class="risk-small">
+      <div class="rs-k" data-i18n="s2.w.eyebrow">Parliamone chiaramente</div>
+      <p data-i18n="s2.w.p1">L'investimento è <strong>illiquido</strong> per la durata del ciclo di recupero, gli incassi possono essere <strong>inferiori o più lenti del previsto</strong> e la qualità della gestione è decisiva. <strong>Non vendiamo certezze</strong>: condividiamo numeri, dati storici e struttura con chi ha le competenze per valutarli.</p>
+      <p data-i18n="s2.w.p2">Per questo struttura e termini non sono su questa pagina: li trovi nel dossier riservato, dopo l'NDA, e li discutiamo dal vivo con il nostro staff.</p>
+    </div>
   </div>
 </section>
 
@@ -580,7 +580,7 @@ body.modal-open{overflow:hidden}
       <p data-i18n="foot.d3">Le operazioni sui portafogli di crediti comportano rischi significativi, inclusa la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. Per residenti fuori dall'Italia l'accesso al dossier è subordinato a verifica della normativa locale; l'accesso non è consentito a soggetti residenti in giurisdizioni in cui la diffusione di queste informazioni non sia conforme alla normativa locale. Titolare del trattamento dei dati personali: IASON S.p.A.</p>
     </div>
     <div class="foot-bottom">
-      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v5.1 · Ottobre 2026</div>
+      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v5.2 · Ottobre 2026</div>
       <div class="foot-links">
         <a href="#privacy" onclick="openPolicy('privacy');return false">Privacy</a>
         <a href="#cookie-policy" onclick="openPolicy('cookie');return false">Cookie</a>
@@ -792,7 +792,7 @@ en:{
   'foot.d2':'Nothing on this page constitutes a public offer, solicitation to invest, deposit-taking, recommendation or investment, legal or tax advice. No contractual proposal is made through this page. Any co-investment takes place through <strong>[pro-rata assignment / instruments issued by a vehicle under Law 130/99]</strong>, on a bilateral basis, with dedicated documentation and after eligibility checks, within the exemptions provided by law.',
   'foot.d4':'Servicing of non-performing loans is entrusted to <strong>[SERVICER NAME]</strong>, a servicer registered under Art. 114.6 of Legislative Decree 385/1993. IASON S.p.A. holds a licence under Art. 115 R.D. 773/1931 and is not a financial intermediary under Art. 106 of Legislative Decree 385/1993.',
   'foot.d3':'Transactions in credit portfolios carry significant risks, including the possible total loss of the capital employed. Past results do not predict future ones. For residents outside Italy, access to the dossier is subject to verification of local law; access is not permitted where the distribution of this information would not comply with local law. Data controller: IASON S.p.A.',
-  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v5.1 · October 2026',
+  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v5.2 · October 2026',
   'ck.h':'Cookies and privacy','ck.sub':'No forced acceptance','ck.p':'We use <strong>technical cookies</strong>, always active and necessary for the site to work. <strong>Analytics</strong> and <strong>marketing</strong> cookies are only set with your consent. Data controller: <strong>IASON S.p.A.</strong>',
   'ck.tech':'Technical<small>Always active: required for the site to work</small>','ck.ana':'Analytics<small>Aggregate usage statistics</small>','ck.mkt':'Marketing<small>LinkedIn Insight Tag – campaign measurement</small>',
   'ck.reject':'Reject all','ck.custom':'Customise','ck.save':'Save preferences','ck.accept':'Accept all',
