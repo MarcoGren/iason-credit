@@ -264,6 +264,50 @@ body.gated>*:not(.gate){filter:blur(6px);pointer-events:none;user-select:none}
 .tm-name{font-size:15px;font-weight:600;line-height:1.25;margin-bottom:5px}
 .tm-role{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
 @media(max-width:540px){.tm-card{padding:20px 12px 18px}.tm-av{width:50px;height:50px;font-size:15px;margin-bottom:10px}.tm-name{font-size:14px}.tm-role{font-size:9.5px;letter-spacing:.12em}}
+/* Team: schede cliccabili + pop-up profilo */
+button.tm-card{font:inherit;color:inherit;width:100%;cursor:pointer;display:block}
+button.tm-card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.tm-more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);transition:color .3s}
+.tm-more svg{width:12px;height:12px;transition:transform .3s}
+button.tm-card:hover .tm-more{color:var(--gold)}
+button.tm-card:hover .tm-more svg{transform:translateX(3px)}
+div.tm-card{cursor:default}
+div.tm-card:hover{transform:none;border-color:var(--line)}
+div.tm-card:hover::before{opacity:0}
+dialog.bio{border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--navy-card);color:var(--white);width:min(680px,calc(100% - 32px));max-width:680px;padding:0;max-height:min(88vh,88dvh);overflow:hidden;display:none;flex-direction:column;margin:auto;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+dialog.bio[open]{display:flex;animation:bioIn .35s cubic-bezier(.16,1,.3,1)}
+@keyframes bioIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+dialog.bio::backdrop{background:rgba(0,8,30,.78);backdrop-filter:blur(5px)}
+.bio-head{position:relative;display:flex;align-items:center;gap:20px;padding:30px 30px 24px;border-bottom:1px solid var(--line);flex-shrink:0;background:radial-gradient(120% 140% at 0% 0%,rgba(216,176,87,.14),transparent 55%),var(--navy-card)}
+.bio-head::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.bio-av{width:78px;height:78px;border-radius:50%;flex-shrink:0;border:1px solid var(--gold);background:radial-gradient(circle at 35% 30%,rgba(216,176,87,.32),rgba(216,176,87,.06) 60%),var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;letter-spacing:.06em;color:var(--gold)}
+.bio-id{min-width:0;padding-right:40px}
+.bio-k{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.bio-name{font-size:24px;font-weight:600;line-height:1.2;margin-bottom:8px}
+.bio-role{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;border:1px solid rgba(216,176,87,.45);border-radius:999px;padding:5px 12px}
+.bio-x{position:absolute;top:18px;right:18px;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;color:var(--muted-strong);transition:border-color .2s,color .2s}
+.bio-x:hover{border-color:var(--gold);color:var(--gold)}
+.bio-body{padding:26px 30px 28px;font-size:14.5px;line-height:1.75;color:var(--muted-strong);font-weight:300;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.bio-body p{margin-bottom:14px}
+.bio-body p:last-child{margin-bottom:0}
+.bio-body p:first-child{font-size:16px;line-height:1.65;color:var(--white);font-weight:400}
+.bio-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px;border-top:1px solid var(--line);flex-shrink:0}
+.bio-nav{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted-strong);padding:8px 10px;border-radius:999px;transition:color .2s;max-width:45%;text-align:left}
+.bio-nav span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bio-nav:hover{color:var(--gold)}
+.bio-nav svg{width:14px;height:14px;flex-shrink:0}
+.bio-count{font-size:11px;letter-spacing:.14em;color:var(--muted);white-space:nowrap;flex-shrink:0}
+@media(max-width:540px){
+  dialog.bio{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;border-left:0;border-right:0}
+  .bio-head{flex-direction:column;align-items:flex-start;gap:14px;padding:24px 20px 20px}
+  .bio-av{width:64px;height:64px;font-size:19px}
+  .bio-name{font-size:21px}
+  .bio-body{padding:22px 20px 24px;font-size:14px;flex:1}
+  .bio-body p:first-child{font-size:15px}
+  .bio-foot{padding:12px 14px calc(12px + env(safe-area-inset-bottom))}
+  .tm-more{margin-top:10px;font-size:9px;letter-spacing:.14em}
+  .bio-nav{max-width:40%;font-size:10px;letter-spacing:.1em;padding:8px 6px}
+}
 .cookie{position:fixed;bottom:24px;left:24px;z-index:8000;max-width:460px;width:calc(100% - 48px);background:var(--navy-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px 20px;transform:translateY(180%);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .4s;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .cookie.visible{transform:none;opacity:1}
 .cookie-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
@@ -446,20 +490,7 @@ body.modal-open{overflow:hidden}
     <div class="eyebrow" data-i18n="st.eyebrow">03 · Il team</div>
     <h2 class="title" data-i18n="st.title">Le persone che seguono <em>ogni portafoglio.</em></h2>
     <p class="lead" data-i18n="st.lead">Competenze finanziarie, legali, tecnologiche e operative sotto lo stesso tetto. Chi seleziona, chi prezza e chi segue il recupero lavora nella stessa stanza.</p>
-    <div class="team">
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">LS</div><div class="tm-name">Luca Salvatore</div><div class="tm-role">Managing Director</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">AA</div><div class="tm-name">Agostino D&#39;Agostino</div><div class="tm-role">CTO</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">EP</div><div class="tm-name">Ettore Patriarca</div><div class="tm-role">CMO</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">RM</div><div class="tm-name">Raffaele Levi-Minzi</div><div class="tm-role">External Director</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">AG</div><div class="tm-name">Alfredo Grasso</div><div class="tm-role">Head of Partnership</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">MR</div><div class="tm-name">Marco Romani</div><div class="tm-role">CSO</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">CG</div><div class="tm-name">Chiara Greco</div><div class="tm-role">Junior Operations</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">GB</div><div class="tm-name">Giorgio Barlattani</div><div class="tm-role">IT Specialist</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">EP</div><div class="tm-name">Elisa Piervergili</div><div class="tm-role">HR &amp; People</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">IO</div><div class="tm-name">Inna Oliynichenko</div><div class="tm-role">Executive Assistant</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">DR</div><div class="tm-name">Debora Rossetti</div><div class="tm-role">Executive Assistant</div></div>
-      <div class="tm-card"><div class="tm-av" aria-hidden="true">PB</div><div class="tm-name">Patrizia De Belardini</div><div class="tm-role">Executive Assistant</div></div>
-    </div>
+    <div class="team" id="teamGrid"></div><!-- schede generate da TEAM nello script -->
   </div>
 </section>
 
@@ -641,7 +672,7 @@ body.modal-open{overflow:hidden}
       <p data-i18n="foot.d3">Le operazioni sui portafogli di crediti comportano rischi significativi, inclusa la possibile perdita totale del capitale impiegato. I risultati passati non sono indicativi di quelli futuri. Per residenti fuori dall'Italia l'accesso al dossier è subordinato a verifica della normativa locale; l'accesso non è consentito a soggetti residenti in giurisdizioni in cui la diffusione di queste informazioni non sia conforme alla normativa locale. Titolare del trattamento dei dati personali: IASON S.p.A.</p>
     </div>
     <div class="foot-bottom">
-      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v6.2 · Ottobre 2026</div>
+      <div data-i18n="foot.copy">© 2026 IASON S.p.A. Tutti i diritti riservati · v6.3 · Ottobre 2026</div>
       <div class="foot-links">
         <a href="#privacy" onclick="openPolicy('privacy');return false">Privacy</a>
         <a href="#cookie-policy" onclick="openPolicy('cookie');return false">Cookie</a>
@@ -652,6 +683,25 @@ body.modal-open{overflow:hidden}
 </footer>
 
 <!-- PRIVACY POLICY -->
+<!-- POP-UP PROFILO TEAM -->
+<dialog class="bio" id="bioDlg" aria-labelledby="bioName">
+  <div class="bio-head">
+    <div class="bio-av" id="bioAv" aria-hidden="true"></div>
+    <div class="bio-id">
+      <div class="bio-k" data-i18n="bio.k">Il team · Profilo</div>
+      <h3 class="bio-name" id="bioName"></h3>
+      <span class="bio-role" id="bioRole"></span>
+    </div>
+    <button type="button" class="bio-x" onclick="closeBio()" data-i18n-aria="bio.close" aria-label="Chiudi">×</button>
+  </div>
+  <div class="bio-body" id="bioBody"></div>
+  <div class="bio-foot">
+    <button type="button" class="bio-nav" id="bioPrev" onclick="stepBio(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span></span></button>
+    <span class="bio-count" id="bioCount"></span>
+    <button type="button" class="bio-nav" id="bioNext" onclick="stepBio(1)" style="justify-content:flex-end;text-align:right"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+</dialog>
+
 <dialog class="policy" id="privacy">
   <div class="pol-head"><h3 data-i18n="pol.privacy.h">Informativa sul trattamento dei dati personali</h3><button type="button" onclick="closePolicy('privacy')" aria-label="Chiudi">×</button></div>
   <div class="pol-body pol-it">
@@ -888,6 +938,7 @@ en:{
   's2.d2h':'Collection dynamics of their own','s2.d2p':'Collections depend on <strong>repayment plans and recoveries</strong>, not on the movement of a listed index: a source of cash flows <strong>with its own logic</strong>.',
   's2.d3h':'Granular by construction','s2.d3p':'<strong>Thousands of small positions</strong>, different regions: the structure of the portfolio <strong>reduces dependence on any single borrower</strong>.',
   's2.d4h':'Alongside those who put their own capital in','s2.d4p':'IASON puts <strong>its own capital</strong> in the lot and invites a few co-investors on each transaction, with a <strong>direct relationship</strong> and no layers of intermediation. <strong>Aligned interests</strong>, a transparent deal, <strong>a full dossier</strong> before any decision.',
+  'bio.k':'The team · Profile','bio.more':'Profile','bio.close':'Close',
   'st.eyebrow':'03 · The team','st.title':'The people behind <em>every portfolio.</em>','st.lead':'Financial, legal, technological and operational expertise under one roof. Those who select, price and follow recovery work in the same room.',
   's3.eyebrow':'04 · How it works','s3.title':'From registration to dossier, <strong>in four steps.</strong>','s3.lead':'A confidential, tracked process. No material on individual transactions circulates before eligibility is verified and confidentiality is formalised.',
   'f1h':'Registration','f1p':'Fill in the form in two minutes and pick the date and time of your call right away.','f1t':'Time: <strong>2 minutes</strong>',
@@ -929,7 +980,7 @@ en:{
   'foot.d2':'Nothing on this page constitutes a public offer, solicitation to invest, deposit-taking, recommendation or investment, legal or tax advice. No contractual proposal is made through this page. Any co-investment takes place through the subscription of <strong>notes issued by the securitisation vehicle</strong>, reserved for qualified investors under applicable European and Italian law, on a bilateral basis, with dedicated documentation and after eligibility checks.',
   'foot.d4':'Servicing of non-performing loans is entrusted to an external partner, a servicer authorised under Italian banking law. Portfolios are purchased by a securitisation vehicle established under Italian law, which is the sellers\' counterparty. IASON S.p.A. invests its own capital in the vehicle, handles selection, pricing and recovery coordination, and is not a financial intermediary nor does it grant loans.',
   'foot.d3':'Transactions in credit portfolios carry significant risks, including the possible total loss of the capital employed. Past results do not predict future ones. For residents outside Italy, access to the dossier is subject to verification of local law; access is not permitted where the distribution of this information would not comply with local law. Data controller: IASON S.p.A.',
-  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v6.2 · October 2026',
+  'foot.copy':'© 2026 IASON S.p.A. All rights reserved · v6.3 · October 2026',
   'g.k':'Restricted access','g.h':'This page is reserved for <em>professional investors.</em>','g.p':'The contents describe in general terms the activity of IASON S.p.A. and are addressed exclusively to professional investors under applicable European and Italian law. They do not constitute a public offer nor a solicitation to invest. Transactions carry significant risks, including the possible loss of capital.','g.yes':'I am a professional investor · Enter','g.no':'I am not a professional investor','g.n':'By continuing you declare that you fall within the category indicated and accept the <a href="#terms" onclick="openPolicy(\'terms\');return false">Terms of use</a>. Your status will in any case be verified before access to any documentation.','g.exit':'Thank you. The contents of this page are not available to the public. For general information on IASON S.p.A. write to <a href="mailto:info@iason.com">info@iason.com</a>.',
   'pol.privacy.h':'Privacy Notice','pol.cookie.h':'Cookie Policy','pol.terms.h':'Terms of use','ck.h':'Cookies and privacy','ck.sub':'No forced acceptance','ck.p':'We use <strong>technical cookies</strong>, always active and necessary for the site to work. <strong>Analytics</strong> and <strong>marketing</strong> cookies are only set with your consent. Data controller: <strong>IASON S.p.A.</strong>',
   'ck.tech':'Technical<small>Always active: required for the site to work</small>','ck.ana':'Analytics<small>Aggregate usage statistics</small>','ck.mkt':'Marketing<small>LinkedIn Insight Tag – campaign measurement</small>',
@@ -952,7 +1003,120 @@ function applyLang(){
   document.querySelectorAll('.gl-en').forEach(b=>b.classList.toggle('active',LANG==='en'));
   if(document.getElementById('cookiePrefs').classList.contains('visible')) document.getElementById('ckCustomBtn').innerHTML=t('ck.save');
   onType(document.getElementById('f_type').value);
+  renderTeam(); if(document.getElementById('bioDlg').open) fillBio();
 }
+// ===== TEAM · dati e pop-up profilo (IT/EN) =====
+// Per aggiungere una foto: campo photo:'/img/team/nome.jpg' (sostituisce le iniziali nella scheda e nel pop-up).
+// Le executive assistant non hanno bio: scheda non cliccabile.
+const TEAM=[
+ {id:'luca-salvatore',ini:'LS',name:'Luca Salvatore',role:'Managing Director',bio:{
+  it:["Già Director in NativeStrategy/BIP e consulente in Accenture, ha un background nella <strong>strategia e trasformazione dei servizi finanziari</strong>. Le sue competenze spaziano dal <strong>new business development</strong> alla corporate innovation, fino alla gestione delle relazioni con i clienti.",
+      "In NativeStrategy ha guidato iniziative di strategia, marketing e innovazione per clienti che vanno dalle startup in rapida crescita alle grandi aziende consolidate. Nel ruolo di Director ha inoltre fatto da mentor ai team, supportato programmi di open innovation e coordinato una verticale funzionale che allinea offerta, vendite e delivery all'interno dell'organizzazione.",
+      "Ha una comprovata capacità di <strong>tradurre i trend emergenti in strategie di business concrete e profittevoli</strong>. Il suo lavoro è orientato a promuovere l'innovazione, abilitare la crescita e costruire soluzioni a valore in mercati in rapida evoluzione."],
+  en:["Former Director at NativeStrategy/BIP and Accenture consultant, with a background in <strong>financial services strategy and transformation</strong>. His expertise spans <strong>new business development</strong>, corporate innovation and customer relationship management.",
+      "At NativeStrategy, he led strategy, marketing and innovation initiatives for clients ranging from fast-growing startups to established corporates. As Director, he also mentors teams, supports open-innovation programmes and coordinates a functional vertical that aligns offering, sales and delivery across the organisation.",
+      "Luca has a proven ability to <strong>translate emerging trends into actionable and profitable business strategies</strong>. His work focuses on fostering innovation, enabling growth and building value-driven solutions in rapidly evolving markets."]}},
+ {id:'agostino-dagostino',ini:'AA',name:"Agostino D'Agostino",role:'CTO',bio:{
+  it:["Laureato in Scienze dell'Informazione con specializzazione in <strong>Modelli della Conoscenza (AI)</strong>, ha costruito un solido percorso in contesti enterprise, contribuendo alla progettazione e realizzazione di <strong>architetture complesse on-premise e cloud</strong>.",
+      "Ha iniziato come IT Architect, è passato al Project Management e ha poi assunto il ruolo di <strong>Head of IT &amp; TLC</strong>, guidando funzioni tecnologiche e infrastrutturali di grande scala.",
+      "Dal 2019 si dedica alla <strong>tecnologia blockchain</strong>, esplorandone l'impiego nelle applicazioni finanziarie e come registro pubblico decentralizzato e immutabile. Ha partecipato al lancio di nuovi progetti blockchain e alla <strong>tokenizzazione di asset materiali e immateriali</strong>, unendo IT governance, attenzione alla cybersecurity e una visione avanzata delle tecnologie emergenti."],
+  en:["With a degree in Information Science and a specialisation in <strong>Knowledge Models (AI)</strong>, Agostino has built a solid career in enterprise environments, supporting the design and implementation of <strong>complex on-premise and cloud architectures</strong>.",
+      "He began as an IT Architect, progressed through Project Management and ultimately took on the role of <strong>Head of IT &amp; TLC</strong>, leading large-scale technology and infrastructure functions.",
+      "Since 2019, he has developed a strong interest in <strong>blockchain technology</strong>, exploring its use in financial applications and as a decentralised, immutable public ledger. He has been involved in the launch of new blockchain projects and in the <strong>tokenisation of both tangible and intangible assets</strong>, combining IT governance, cybersecurity awareness and advanced emerging-tech insight."]}},
+ {id:'ettore-patriarca',ini:'EP',name:'Ettore Patriarca',role:'CMO',bio:{
+  it:["Con un solido background nel settore <strong>telecomunicazioni e tecnologia</strong>, ha ricoperto ruoli senior in alcuni dei principali gruppi tech al mondo.",
+      "Prima di entrare in Gren è stato <strong>Marketing Director di Huawei Consumer</strong> e, dal 2018, di Huawei Enterprise, seguendo il lancio e la rapida espansione del brand sul mercato italiano e contribuendo alla sua affermazione tra i leader di mercato.",
+      "Riconosciuto per la forte competenza nel <strong>mobile</strong>, consolidata da precedenti esperienze in Ericsson e Sony Ericsson, ha maturato anche esperienze trasversali nel Food &amp; Beverage e nell'Automotive con aziende di primo piano come <strong>Peugeot Motocycles e Coca-Cola</strong>."],
+  en:["With a solid background in the <strong>telecommunications and technology</strong> sector, Ettore has held senior roles in some of the world's most prominent tech groups.",
+      "Before joining Gren, he served as <strong>Marketing Director for Huawei Consumer</strong> and later, from 2018, for Huawei Enterprise, overseeing the brand's launch and rapid expansion in the Italian market and contributing to its rise as one of the market leaders.",
+      "Recognised for his strong expertise in the <strong>mobile industry</strong>, strengthened by previous roles at Ericsson and Sony Ericsson, he also gained cross-sector experience in Food &amp; Beverage and Automotive with leading companies such as <strong>Peugeot Motocycles and Coca-Cola</strong>."]}},
+ {id:'raffaele-levi-minzi',ini:'RM',name:'Raffaele Levi-Minzi',role:'External Director',bio:{
+  it:["Con <strong>vent'anni di esperienza</strong> in due diligence, corporate finance e investimenti, ha iniziato la carriera come revisore in <strong>KPMG Milano</strong> e ha trascorso sette anni in <strong>PwC</strong>, nel Transaction Services in Italia e nel Corporate Finance in Lussemburgo.",
+      "È poi diventato <strong>Principal in un fondo di private equity</strong>, dove ha seguito diverse acquisizioni, e ha successivamente fondato una propria società di advisory finanziaria e strategica.",
+      "Come <strong>Head of Investment di Threestones Capital Management</strong> ha guidato numerose acquisizioni cross-border nel settore sanitario e nel residenziale in Germania, Italia e Spagna, negoziando i finanziamenti con primarie banche europee.",
+      "Porta questa esperienza in GREN come External Director, a supporto della <strong>strategia di investimento e della governance</strong> del Gruppo."],
+  en:["With <strong>twenty years of experience</strong> in due diligence, corporate finance and investment, Raffaele began his career as an auditor at <strong>KPMG Milan</strong> and spent seven years at <strong>PwC</strong>, working in Transaction Services in Italy and Corporate Finance in Luxembourg.",
+      "He went on to become <strong>Principal at a private equity fund</strong>, where he oversaw several acquisitions, and later founded his own financial and strategic advisory firm.",
+      "As <strong>Head of Investment at Threestones Capital Management</strong>, he has led a significant number of cross-border acquisitions in healthcare and residential real estate across Germany, Italy and Spain, negotiating financing with leading European banks.",
+      "He brings this expertise to GREN as External Director, supporting the Group's <strong>investment strategy and governance</strong>."]}},
+ {id:'alfredo-grasso',ini:'AG',name:'Alfredo Grasso',role:'Head of Partnership',bio:{
+  it:["Con <strong>oltre 15 anni di esperienza</strong> nello sviluppo commerciale B2B tra tecnologia, media e fintech, ha costruito un percorso internazionale tra <strong>Svizzera, Malta e Italia</strong>. Tra i ruoli ricoperti, Senior Partnership Manager in The Space Cinema e una precedente esperienza in Intesa Rent4you (Intesa Sanpaolo), che hanno formato la sua competenza in <strong>ecosistemi di partnership complessi</strong> e strategie commerciali ad alto impatto.",
+      "Definisce e guida le <strong>strategie di go-to-market</strong>, costruisce e fa crescere i canali di acquisizione e sviluppo, gestisce reti di vendita e partnership strategiche con una mentalità orientata alla crescita.",
+      "Il suo lavoro è strettamente legato all'evoluzione del prodotto: collabora con i team di prodotto traducendo i <strong>feedback del mercato</strong> in miglioramenti della piattaforma e nello sviluppo di nuove funzionalità allineate alle esigenze dei clienti."],
+  en:["With <strong>over 15 years of experience</strong> in B2B commercial development across technology, media and fintech, Alfredo has built an international career spanning <strong>Switzerland, Malta and Italy</strong>. His background includes senior roles such as Senior Partnership Manager at The Space Cinema and prior experience at Intesa Rent4you (Intesa Sanpaolo), shaping his expertise in <strong>complex partnership ecosystems</strong> and high-impact commercial strategies.",
+      "He defines and leads <strong>go-to-market strategies</strong>, builds and scales acquisition and development channels, and manages sales networks and strategic partnerships with a growth-oriented mindset.",
+      "His work is strongly connected to product evolution: he collaborates closely with product teams, translating <strong>market feedback</strong> into platform improvements and the development of new features aligned with customer needs."]}},
+ {id:'marco-romani',ini:'MR',name:'Marco Romani',role:'CSO',bio:{
+  it:["Già <strong>CMO di OSM Group</strong>, è un marketer guidato dall'innovazione, da una comunicazione centrata sulle persone e dall'<strong>impatto misurabile sul business</strong>. Il suo approccio unisce disciplina analitica e una forte attenzione all'empatia e alle relazioni: un marketing efficace si costruisce sui numeri, ma anche sulla comprensione delle persone.",
+      "Ha maturato una solida esperienza nel <strong>marketing management e nelle business operations</strong>, lavorando al fianco di professionisti di primo piano in diverse aziende e contribuendo a risultati concreti in termini di ricavi. Il suo lavoro spazia dalla pianificazione strategica allo sviluppo del brand, dalle campagne orientate alla crescita all'esecuzione focalizzata sulla performance.",
+      "Curiosità e spinta al miglioramento continuo lo mantengono allineato ai trend di mercato, permettendogli di sviluppare <strong>strategie di marketing ad alto impatto</strong> in contesti dinamici."],
+  en:["Former <strong>CMO at OSM Group</strong>, Marco is a marketer driven by innovation, human-centred communication and <strong>measurable business impact</strong>. His approach combines analytical discipline with a strong focus on empathy and relationships, reflecting a belief that effective marketing is built not only on numbers, but on understanding people.",
+      "He has developed solid experience in <strong>marketing management and business operations</strong>, working alongside leading professionals across multiple companies and contributing to tangible, revenue-generating results. His work spans strategic planning, brand development, growth-oriented campaigns and performance-focused execution.",
+      "His curiosity and drive for continuous improvement keep him aligned with the latest market trends, enabling him to deliver <strong>high-impact marketing strategies</strong> in dynamic environments."]}},
+ {id:'chiara-greco',ini:'CG',name:'Chiara Greco',role:'Legal & Operations',bio:{
+  it:["Laureata in Giurisprudenza all'<strong>Università LUISS Guido Carli</strong>, con specializzazione in <strong>Innovation Law and Regulation</strong>. Il suo percorso accademico è orientato a costruire basi solide nelle principali aree del diritto, con un interesse specifico per il diritto delle nuove tecnologie, in particolare la <strong>protezione dei dati personali</strong> e il quadro regolamentare europeo, incluso il GDPR e la normativa collegata.",
+      "Unisce una formazione giuridica ampia a una competenza specialistica nella <strong>regolamentazione digitale</strong>, con un approccio attento sia all'evoluzione normativa sia a quella tecnologica."],
+  en:["Chiara holds a Law degree from <strong>LUISS Guido Carli University</strong>, with a specialisation in <strong>Innovation Law and Regulation</strong>. Her academic background is focused on building a solid foundation across the main areas of law, with a particular interest in new technologies law, especially <strong>personal data protection</strong> and the European regulatory framework, including the GDPR and related regulations.",
+      "She combines a broad legal education with specialised expertise in <strong>digital regulation</strong>, adopting an approach attentive to both regulatory developments and technological evolution."]}},
+ {id:'giorgio-barlattani',ini:'GB',name:'Giorgio Barlattani',role:'IT Specialist',bio:{
+  it:["Software Analyst e Developer con un solido background nel settore <strong>internet e tecnologia</strong>. Le sue competenze spaziano dall'ingegneria del software all'amministrazione di rete e all'<strong>analisi dei dati</strong>, supportate da una forte padronanza tecnica di Python e dei principali strumenti di produttività.",
+      "Il suo profilo riflette una <strong>mentalità ingegneristica strutturata</strong>, grande attenzione al dettaglio e un percorso costante nel supporto alla delivery tecnica all'interno di progetti digitali complessi."],
+  en:["Giorgio is an experienced Software Analyst and Developer with a solid background in the <strong>internet and technology industry</strong>. His expertise spans software engineering, network administration and <strong>data-driven analysis</strong>, supported by strong technical proficiency in Python and key productivity tools.",
+      "His profile reflects a <strong>structured engineering mindset</strong>, attention to detail and a consistent track record in supporting technical delivery within complex digital projects."]}},
+ {id:'elisa-piervergili',ini:'EP',name:'Elisa Piervergili',role:'HR & People',bio:{
+  it:["Con <strong>oltre quindici anni di esperienza</strong> nella gestione delle risorse umane e nel coordinamento operativo in aziende del settore servizi, ha sviluppato una competenza solida e concreta sull'<strong>intero ciclo HR</strong>: dal recruiting all'onboarding, dalla gestione delle paghe alla pianificazione dei turni e ai rapporti con i fornitori.",
+      "Il suo percorso si è sviluppato in ruoli di responsabilità crescente, guidando in autonomia uffici del personale e gestendo sia la dimensione amministrativa sia quella operativa delle risorse umane in <strong>contesti complessi e multi-team</strong>."],
+  en:["With <strong>over fifteen years of experience</strong> in HR management and operational coordination across service-sector companies, Elisa has developed solid, practical expertise in the <strong>full HR lifecycle</strong>, from recruitment and onboarding to payroll management, workforce scheduling and supplier relations.",
+      "Her career has spanned roles of increasing responsibility within organisations where she led personnel offices autonomously, managing both the administrative and operational dimensions of human resources in <strong>complex, multi-team environments</strong>."]}},
+ {id:'inna-oliynichenko',ini:'IO',name:'Inna Oliynichenko',role:'Executive Assistant'},
+ {id:'debora-rossetti',ini:'DR',name:'Debora Rossetti',role:'Executive Assistant'},
+ {id:'patrizia-de-belardini',ini:'PB',name:'Patrizia De Belardini',role:'Executive Assistant'}
+];
+const BIO_LIST=TEAM.filter(p=>p.bio);
+let BIO_IDX=-1;
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const avHTML=p=>p.photo?'<img src="'+esc(p.photo)+'" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%">':esc(p.ini);
+function renderTeam(){
+  const g=document.getElementById('teamGrid'); if(!g) return;
+  const more=LANG==='it'?'Profilo':I18N.en['bio.more'];
+  g.innerHTML=TEAM.map(p=>{
+    const inner='<div class="tm-av" aria-hidden="true">'+avHTML(p)+'</div><div class="tm-name">'+esc(p.name)+'</div><div class="tm-role">'+esc(p.role)+'</div>';
+    return p.bio
+      ? '<button type="button" class="tm-card" onclick="openBio(\''+p.id+'\')" aria-haspopup="dialog">'+inner+'<span class="tm-more">'+more+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>'
+      : '<div class="tm-card">'+inner+'</div>';
+  }).join('');
+}
+function fillBio(){
+  const p=BIO_LIST[BIO_IDX]; if(!p) return;
+  document.getElementById('bioAv').innerHTML=avHTML(p);
+  document.getElementById('bioName').textContent=p.name;
+  document.getElementById('bioRole').textContent=p.role;
+  const b=document.getElementById('bioBody');
+  b.innerHTML=(p.bio[LANG]||p.bio.it).map(t=>'<p>'+t+'</p>').join(''); b.scrollTop=0;
+  const n=BIO_LIST.length, pv=BIO_LIST[(BIO_IDX-1+n)%n], nx=BIO_LIST[(BIO_IDX+1)%n];
+  document.querySelector('#bioPrev span').textContent=pv.name;
+  document.querySelector('#bioNext span').textContent=nx.name;
+  document.getElementById('bioPrev').setAttribute('aria-label',(LANG==='it'?'Profilo precedente: ':'Previous profile: ')+pv.name);
+  document.getElementById('bioNext').setAttribute('aria-label',(LANG==='it'?'Profilo successivo: ':'Next profile: ')+nx.name);
+  document.getElementById('bioCount').textContent=(BIO_IDX+1)+' / '+n;
+  document.querySelector('#bioDlg .bio-x').setAttribute('aria-label',LANG==='it'?'Chiudi':'Close');
+}
+function openBio(id){
+  BIO_IDX=BIO_LIST.findIndex(p=>p.id===id); if(BIO_IDX<0) return;
+  fillBio(); const d=document.getElementById('bioDlg');
+  if(!d.open){ d.showModal(); document.body.classList.add('modal-open'); }
+}
+function stepBio(k){ const n=BIO_LIST.length; BIO_IDX=(BIO_IDX+k+n)%n; fillBio(); }
+function closeBio(){ const d=document.getElementById('bioDlg'); if(d.open) d.close(); }
+(function(){
+  const d=document.getElementById('bioDlg');
+  d.addEventListener('close',()=>{ if(!document.querySelector('dialog[open]')) document.body.classList.remove('modal-open'); });
+  d.addEventListener('click',e=>{ if(e.target===d) d.close(); });
+  d.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){e.preventDefault();stepBio(1);} else if(e.key==='ArrowLeft'){e.preventDefault();stepBio(-1);} });
+  let x0=null; d.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;},{passive:true});
+  d.addEventListener('touchend',e=>{ if(x0===null) return; const dx=e.changedTouches[0].clientX-x0; x0=null; if(Math.abs(dx)>60) stepBio(dx<0?1:-1); },{passive:true});
+})();
+
 function setLang(l){ LANG=l; try{localStorage.setItem('ia_lang',l);}catch(_){ } applyLang(); }
 
 // Società/ruolo obbligatori per family office e istituzionali
